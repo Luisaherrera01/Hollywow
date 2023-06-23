@@ -42,7 +42,7 @@ function FormAdministrador() {
           />
           <label>contraseña:</label>
           <input
-            type="text"
+            type="password"
             value={contrasenaAdministrador}
             onChange={handlePasswordInputChange}
           />

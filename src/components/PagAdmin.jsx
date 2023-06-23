@@ -1,9 +1,11 @@
-
+import { MenuNavegacion } from "./MenuNavegacion";
 
 const PagAdmin = () => {
   return (
-    <div>PagAdmin</div>
-  )
-}
+    <>
+      <MenuNavegacion />
+    </>
+  );
+};
 
-export default PagAdmin
+export default PagAdmin;

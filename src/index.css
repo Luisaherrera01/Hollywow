@@ -12,11 +12,47 @@ body {
   }
 
 
-.logo{
+section.logo{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     border-radius: 100%;
 
+}
+
+.banner{
+    background-image: url("./assets/imagenes/banner.jpg");
+    background-position: top center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 25%;
+}
+
+.menu{
+    background-color: darkgrey;
+}
+
+.historia{
+    background-color:bisque; 
+    
+}
+
+.historia1,
+.historia2{
+    padding: 20px;
+}
+
+.secciones{
+    padding: 20px 0;
+    text-align: center;
+}
+
+.planetas{
+    
+    background: linear-gradient(cadetblue, white)
+}
+
+.especies{
+    background:linear-gradient(steelblue,white);
 }
