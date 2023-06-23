@@ -1,5 +1,5 @@
 import Controlador from "./Controlador/Controlador";
-import { MenuNavegacion } from "./MenuNavegacion";
+import { MenuNavegacion } from "../MenuNavegacion";
 
 function PagUsuario() {
   return (

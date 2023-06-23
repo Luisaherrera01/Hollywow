@@ -1,4 +1,4 @@
-import BuscarPelis from "../../Servicios/BuscarPelis.js";
+import BuscarPelis from "../Servicios/BuscarPelis.js";
 
 const controller = () => {
   BuscarPelis().then(function (respuesta) {

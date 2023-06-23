@@ -1,4 +1,4 @@
-import { MenuNavegacion } from "./MenuNavegacion";
+import { MenuNavegacion } from "../MenuNavegacion";
 
 const PagAdmin = () => {
   return (

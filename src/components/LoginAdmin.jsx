@@ -19,6 +19,7 @@ function FormAdministrador() {
       setErrorInput(false);
     } else {
       setErrorInput(true);
+      alert("usuario no valido")
     }
   };
 

@@ -1,17 +1,17 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Login from "./components/Login";
-import Administrador from "./components/Administrador"
-import PagUsuario from "./components/PagUsuario"
-import PagAdmin from "./components/PagAdmin";
+import Logo from "./components/Logo";
+import LoginAdmin from "./components/LoginAdmin"
+import PagUsuario from "./components/Usuario/PagUsuario"
+import PagAdmin from "./components/Administrador/PagAdmin";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Login />
+    element: <Logo />
   },
   {
     path: "/Administrador",
-    element: <Administrador />
+    element: <LoginAdmin />
   },
 
   {
