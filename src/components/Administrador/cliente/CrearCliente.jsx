@@ -1,5 +1,5 @@
 import { collection, addDoc } from "firebase/firestore"
-import { dataBase } from "../../config/DataBase"
+import { dataBase,subirImagen } from "../../config/DataBase"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
@@ -12,13 +12,13 @@ const CrearCliente = () => {
     const [direccion, setDireccion] = useState("")
     const [barrio, setBarrio] = useState("")
     const [ciudad, setCiudad] = useState("")
-    const [imagen, setImagen] = useState(null)
+    const [img, setImg] = useState(null)
 
     const returnListadoClientes = useNavigate()
     
     const agregarCliente = async () => {
-        const clienteColletion = collection(dataBase, "clientes")
-        left: 50%;
+        const urlImagen= await subirImagen(img)
+        const clienteColletion = collection(dataBase, "hollywow")
         const cliente = {
             nombre, 
             documento, 
@@ -27,7 +27,7 @@ const CrearCliente = () => {
             direccion,
             barrio,
             ciudad,
-            imagen
+            urlImagen
         }
         
         await addDoc(clienteColletion, cliente)
@@ -44,7 +44,7 @@ const CrearCliente = () => {
                 <input onChange={(e) => setDireccion(e.target.value)} placeholder={"Dirección"} type={"text"} />
                 <input onChange={(e) => setBarrio(e.target.value)} placeholder={"Barrio"} type={"text"} />
                 <input onChange={(e) => setCiudad(e.target.value)} placeholder={"Ciudad"} type={"text"} />
-                <input onChange={(e) => setImagen(e.target.files[0])} placeholder={"Imagen"} type={"file"} />
+                <input onChange={(e) => setImg(e.target.files[0])} type="file" />
 
                 <input onClick={agregarCliente()} type={"button"} value={"agregar cliente"} />
             </form>

@@ -1,5 +1,9 @@
+import {Link} from "react-router-dom"
+import ListarClientes from "./Administrador/cliente/ListarCliente";
+
 export const MenuNavegacion = () => {
   return (
+    <section>
     <header>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
@@ -25,10 +29,11 @@ export const MenuNavegacion = () => {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Clientes
-                </a>
+    
+                  <Link to ={'/crearcliente'} className="nav-link"> Clientes </Link>
+                  
               </li>
+              
               <li className="nav-item">
                 <a className="nav-link" href="#">
                   Productos
@@ -54,5 +59,10 @@ export const MenuNavegacion = () => {
         </div>
       </nav>
     </header>
+      <body>
+      <ListarClientes/>
+      </body>
+    </section>
+
   );
 };
