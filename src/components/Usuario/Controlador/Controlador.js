@@ -22,6 +22,7 @@ const controller = () => {
       original_title.textContent = peliculas.original_title;
 
       let overview = document.createElement("p");
+      overview.classList.add("text-left");
       overview.textContent = peliculas.overview;
 
       let vote_average = document.createElement("p");

@@ -1,10 +1,11 @@
 import Controlador from "./Controlador/Controlador";
-import { MenuNavegacion } from "../MenuNavegacion";
 
 function PagUsuario() {
   return (
     <div>
-      <MenuNavegacion/>
+      <div>
+      <button type="submit" className="btn boton-regresar mt-3"> Volver</button>
+      </div>
 
       <main>
         <section className="banner"></section>
@@ -19,7 +20,7 @@ function PagUsuario() {
               />
             </section>
             <section className="col align-self-center">
-              <p>
+              <p className="texto">
                 Es la tercera adaptación cinematográfica de la franquicia de
                 Mario de Nintendo, después de la película de anime japonesa de
                 1986, Super Mario Bros.: Peach-Hime Kyushutsu Dai Sakusen! y la
@@ -35,7 +36,7 @@ function PagUsuario() {
 
           <section className="row historia2">
             <section className="col align-self-center">
-              <p>
+              <p className="texto">
                 La película está escrita y dirigida por James Gunn y
                 protagonizada por un elenco conjunto compuesto por Chris Pratt,
                 Zoe Saldaña, Dave Bautista, Vin Diesel, Bradley Cooper, Karen
@@ -56,7 +57,7 @@ function PagUsuario() {
         </section>
 
         <section className="container secciones">
-          <section className="p-3 planetas">
+          <section className="p-3 peliculas">
             <h1>Peliculas</h1>
             <section className="bg-secondary p-2 text-dark bg-opacity-10"></section>
             <section

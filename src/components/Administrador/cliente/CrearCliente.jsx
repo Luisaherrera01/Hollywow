@@ -18,6 +18,7 @@ const CrearCliente = () => {
     
     const agregarCliente = async () => {
         const clienteColletion = collection(dataBase, "clientes")
+        left: 50%;
         const cliente = {
             nombre, 
             documento, 

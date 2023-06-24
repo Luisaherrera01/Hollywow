@@ -1,58 +1,154 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    background-color: white;
-    background-size: cover;
-    height: 100%;
-    width: 100%;
-  }
+  background-color: #c1ece4;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
 
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-section.logo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    border-radius: 100%;
+.ingreso {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding: 60px 20px;
+  background-color: #3aa6b9;
+  border-radius: 6px;
+  border: 1px solid black;
+  position: absolute;
+  width: 300px;
+  top: 50%;
+  left: 50%;
+  margin-top: -200px;
+  margin-left: -200px;
+}
+
+.admin,
+.user {
+  margin: 10px;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
 
 }
 
-.banner{
-    background-image: url("./assets/imagenes/banner.jpg");
-    background-position: top center;
-    background-size: cover;
-    background-attachment: fixed;
-    padding: 25%;
+.login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -200px;
+  margin-left: -200px;
 }
 
-.menu{
-    background-color: darkgrey;
+.login-form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  width: 400px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  background-color: #3aa6b9;
+  border-radius: 6px;
+  border: 1px solid black;
 }
 
-.historia{
-    background-color:bisque; 
-    
+.login-tittle {
+  color: white;
+  text-transform: uppercase;
+  margin-bottom: 60px;
+}
+
+.administrador,
+.password {
+  margin: 10px;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  color: white;
+}
+
+.login-boton,
+.boton-regresar,
+.admin,
+.user{
+  background-color: #ff9eaa;
+  width: 200px;
+  margin: 10px;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.login-boton:hover,
+.boton-regresar:hover {
+  background-color: #ffd0d0;
+}
+
+.banner {
+  background-image: url("./assets/imagenes/banner.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 25%;
+}
+
+.historia {
+  background-color: #3aa6b9;
 }
 
 .historia1,
-.historia2{
-    padding: 20px;
+.historia2 {
+  padding: 20px;
 }
 
-.secciones{
-    padding: 20px 0;
-    text-align: center;
+.secciones {
+  padding: 20px 0;
+  text-align: center;
 }
 
-.planetas{
-    
-    background: linear-gradient(cadetblue, white)
+.peliculas {
+  background: linear-gradient(#ff9eaa, white);
 }
 
-.especies{
-    background:linear-gradient(steelblue,white);
+.texto {
+  color: white;
+}
+
+h1 {
+  color: white;
+  padding-top: 10px;
+}
+h3 {
+  padding: 10px;
+}
+
+.text-left {
+  text-align: left;
+  color: gray;
+  padding: 15px;
+}
+
+.card {
+  border: 2px solid black;
 }

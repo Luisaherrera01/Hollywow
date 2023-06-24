@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/imagenes/Hollywow.png";
+import logo from "../assets/imagenes/logo.png";
 
 function Login() {
   const [isLoading, setIsLoading] = useState(true);
@@ -8,16 +8,16 @@ function Login() {
   //Simulamos un loader
   setTimeout(() => {
     setIsLoading(false);
-  }, 3000);
+  }, 1500);
 
   return (
     <section>
-      {isLoading === true && <img className="Logo" src={logo} />}
+      {isLoading === true && <img className="logo" src={logo} />}
 
       {isLoading === false && (
-        <div>
-          <Link to={"/Administrador"}>Administrador</Link>
-          <Link to={"/PagUsuario"}>Usuario</Link>
+        <div className="ingreso">
+          <Link to={"/ingreso-admin"}className="admin">Administrador</Link>
+          <Link to={"/usuario"} className="user">Usuario</Link>
         </div>
       )}
     </section>

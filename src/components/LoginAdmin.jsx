@@ -1,13 +1,14 @@
 import { useState } from "react";
-import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
-const nameAdmin = "Hollywow123";
-const passwordAdmin = "H12345";
+const nameAdmin = "admin";
+const passwordAdmin = "123";
 
 function FormAdministrador() {
   const [nombreAdministrador, setNombreAdministrador] = useState("");
   const [contrasenaAdministrador, setContrasenaAdministrador] = useState("");
   const [errorInput, setErrorInput] = useState(false);
+  const navigate = useNavigate();
 
   const validateForm = (e) => {
     e.preventDefault();
@@ -17,9 +18,9 @@ function FormAdministrador() {
     ) {
       console.log("Es administrador");
       setErrorInput(false);
+      navigate('/administrador')
     } else {
       setErrorInput(true);
-      alert("usuario no valido")
     }
   };
 
@@ -32,24 +33,26 @@ function FormAdministrador() {
   };
 
   return (
-    <section>
-      <form onSubmit={validateForm}>
+    <section className="login">
+      <form className="login-form" onSubmit={validateForm}>
+      <h1 className="login-title"> Administrador</h1>
         <div>
-          <label>Administrador:</label>
+          <label className="administrador">Administrador:</label>
           <input
             type="text"
             value={nombreAdministrador}
             onChange={handleNameInputChange}
           />
-          <label>contraseña:</label>
+          <label className="password">contraseña:</label>
           <input
             type="password"
             value={contrasenaAdministrador}
             onChange={handlePasswordInputChange}
           />
         </div>
-        <Link to={"/Ingresar"}>Ingresar</Link>
-        {errorInput === true && <span>Usuario o contraseña no válido</span>}
+        {errorInput === true && <span className="text-danger">Usuario o contraseña no válido</span>}
+        <button type="submit" className="btn login-boton mt-3">Ingresar</button>
+        <button type="submit" className="btn boton-regresar mt-3"> Volver</button>
         
       </form>
     </section>
@@ -57,3 +60,5 @@ function FormAdministrador() {
 }
 
 export default FormAdministrador;
+
+

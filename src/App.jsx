@@ -10,17 +10,17 @@ const router = createBrowserRouter([
     element: <Logo />
   },
   {
-    path: "/Administrador",
+    path: "/ingreso-admin",
     element: <LoginAdmin />
   },
 
   {
-    path: "/Ingresar",
+    path: "/administrador",
     element: <PagAdmin />
   },
 
   {
-    path: "/PagUsuario",
+    path: "/usuario",
     element: <PagUsuario />
   },
 

@@ -26,12 +26,27 @@ export const MenuNavegacion = () => {
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">
-                  Estrenos
+                  Clientes
                 </a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">
-                  Noticias
+                  Productos
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">
+                  Proveedores
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">
+                  Empleados
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">
+                  Contraseñas
                 </a>
               </li>
             </ul>
