@@ -1,14 +1,30 @@
 import { initializeApp } from "firebase/app";
 import{getFirestore} from "@firebase/firestore"
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { v4 } from "uuid";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDxP20-0cmc0k_YKuMpqhtiOK-GLE_hhlk",
-    authDomain: "crud-hollywow.firebaseapp.com",
-    projectId: "crud-hollywow",
-    storageBucket: "crud-hollywow.appspot.com",
-    messagingSenderId: "787988661276",
-    appId: "1:787988661276:web:fa51cd9a3f8009d04e4bd9"
-  };
+  apiKey: "AIzaSyAJFLbe6RJmuICgLxtN6ajNkfxiOKAzyzU",
+  authDomain: "hollywow-201f1.firebaseapp.com",
+  projectId: "hollywow-201f1",
+  storageBucket: "hollywow-201f1.appspot.com",
+  messagingSenderId: "1003826852243",
+  appId: "1:1003826852243:web:fd4206bf6e50848a5d7866"
+};
 
 const app = initializeApp(firebaseConfig);
-export const dataBase = getFirestore(app)
+export const dataBase = getFirestore(app);
+export const storage = getStorage(app);
+
+/**
+ * 
+ * @param {File} image Any image
+ * @returns The download URL for the image
+ */
+export const subirImagen = async (image) => {
+  const subirImagen = ref(storage, v4());
+  await uploadBytes(subirImagen, image);
+  const urlImg = await getDownloadURL(subirImagen);
+
+  return urlImg;
+}
