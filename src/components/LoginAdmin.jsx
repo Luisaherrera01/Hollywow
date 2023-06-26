@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom"
 
 const nameAdmin = "admin";
 const passwordAdmin = "123";
@@ -51,8 +52,10 @@ function FormAdministrador() {
           />
         </div>
         {errorInput === true && <span className="text-danger">Usuario o contraseña no válido</span>}
-        <button type="submit" className="btn login-boton mt-3">Ingresar</button>
-        <button type="submit" className="btn boton-regresar mt-3"> Volver</button>
+        {/*<button type="submit" className="btn login-boton mt-3">Ingresar</button>
+        <button type="submit" className="btn boton-regresar mt-3"> Volver</button>*/}
+        <Link to="/administrador">Ingresar </Link>
+        <Link to="/">Volver </Link>
         
       </form>
     </section>

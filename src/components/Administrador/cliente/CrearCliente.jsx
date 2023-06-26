@@ -17,13 +17,8 @@ const CrearCliente = () => {
     const returnListadoClientes = useNavigate()
     
     const agregarCliente = async () => {
-<<<<<<< HEAD
-        const clienteColletion = collection(dataBase, "clientes")
-    
-=======
         const urlImagen= await subirImagen(img)
         const clienteColletion = collection(dataBase, "hollywow")
->>>>>>> 3e74e25a84eaa65a9e2b78084db8d2e059b8fd52
         const cliente = {
             nombre, 
             documento, 

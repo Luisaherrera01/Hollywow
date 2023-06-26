@@ -1,9 +1,9 @@
-import { MenuNavegacion } from "../MenuNavegacion";
+import { MenuAdmin } from "../MenuAdmin";
 
 const PagAdmin = () => {
   return (
     <>
-      <MenuNavegacion />
+      <MenuAdmin />
     </>
   );
 };

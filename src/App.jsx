@@ -1,11 +1,12 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Logo from "./components/Logo";
 import LoginAdmin from "./components/LoginAdmin"
-import PagUsuario from "./components/Usuario/PagUsuario"
+import Peliculas from "./components/Peliculas/PeliculasUsuario"
 import PagAdmin from "./components/Administrador/PagAdmin"
 import CrearCliente from "./components/Administrador/cliente/CrearCliente"
 import EditarCliente from "./components/Administrador/cliente/EditarCliente"
 import ListarCliente from "./components/Administrador/cliente/ListarCliente"
+import PagUsuario from "./components/Usuario/PagUsuario";
 
 const router = createBrowserRouter([
   {
@@ -23,25 +24,35 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "/usuario",
-    element: <PagUsuario />
+    path: "/peliculas",
+    element: <Peliculas />
   },
 
   {
-    path: "/crearcliente",
+    path: "/crear-cliente",
     element: <CrearCliente/>
   },
 
   {
-    path: "/editarcliente",
+    path: "/editar-cliente",
     element: <EditarCliente/>
   }, 
 
   {
-    path: "/listarcliente",
+    path: "/listar-clientes",
     element: <ListarCliente/>
-  }
+  },
 
+  {
+    path: "/usuario",
+    element: <PagUsuario/>
+  },
+
+  {
+    path: "/administrador",
+    element:<PagAdmin/>
+  }
+  
 ])
 
 function App() {

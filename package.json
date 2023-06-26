@@ -13,11 +13,7 @@
     "firebase": "^9.23.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-<<<<<<< HEAD
-    "react-router-dom": "^6.13.0",
-=======
     "react-router-dom": "^6.14.0",
->>>>>>> 3e74e25a84eaa65a9e2b78084db8d2e059b8fd52
     "uuid": "^9.0.0"
   },
   "devDependencies": {

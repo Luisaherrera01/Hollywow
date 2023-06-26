@@ -1,14 +1,15 @@
-import {Link} from "react-router-dom"
-import ListarClientes from "./Administrador/cliente/ListarCliente";
+import { Link } from "react-router-dom";
 
-export const MenuNavegacion = () => {
+export const MenuUsuario = () => {
   return (
-    <section>
     <header>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
-            Inicio
+            <Link to={"/"} className="nav-link">
+              {" "}
+              Inicio{" "}
+            </Link>
           </a>
           <button
             className="navbar-toggler"
@@ -24,16 +25,22 @@ export const MenuNavegacion = () => {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
-                  Peliculas
-                </a>
+                <Link to={"/peliculas"} className="nav-link">
+                  {" "}
+                  Películas{" "}
+                </Link>
               </li>
               <li className="nav-item">
-    
-                  <Link to ={'/crearcliente'} className="nav-link"> Clientes </Link>
-                  
+                <Link
+                  to={"/listar-clientes"}
+                  state={{ isAdmin: false }}
+                  className="nav-link"
+                >
+                  {" "}
+                  Clientes{" "}
+                </Link>
               </li>
-              
+
               <li className="nav-item">
                 <a className="nav-link" href="#">
                   Productos
@@ -59,10 +66,5 @@ export const MenuNavegacion = () => {
         </div>
       </nav>
     </header>
-      <body>
-      <ListarClientes/>
-      </body>
-    </section>
-
   );
 };
