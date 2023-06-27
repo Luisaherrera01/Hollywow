@@ -7,10 +7,7 @@ export const MenuAdmin = () => {
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
-            <Link to={"/"} className="nav-link">
-              {" "}
-              Inicio{" "}
-            </Link>
+            <Link to={"/"} className="nav-link">Inicio</Link>
           </a>
           <button
             className="navbar-toggler"
@@ -31,13 +28,7 @@ export const MenuAdmin = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link
-                  to={"/listar-clientes"}
-                  state={{ isAdmin: true }} 
-                  className="nav-link"
-                >
-                  Clientes
-                </Link>
+                <Link to={"/listar-clientes"} className="nav-link"> Clientes </Link>
               </li>
 
               <li className="nav-item">

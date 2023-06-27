@@ -31,14 +31,7 @@ export const MenuUsuario = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link
-                  to={"/listar-clientes"}
-                  state={{ isAdmin: false }}
-                  className="nav-link"
-                >
-                  {" "}
-                  Clientes{" "}
-                </Link>
+                <Link to={"/clientes-usuario"} className="nav-link"> Clientes </Link>
               </li>
 
               <li className="nav-item">
