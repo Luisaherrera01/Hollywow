@@ -8,6 +8,7 @@ import ListarCliente from "./components/Administrador/cliente/ListarCliente"
 import PagUsuario from "./components/Usuario/PagUsuario";
 import PeliculasAdmin from "./components/Peliculas/PeliculasAdmin";
 import PeliculasUsuario from "./components/Peliculas/PeliculasUsuario";
+import ListarClientesUsuario from "./components/Usuario/ListarClientesUsuario";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,11 @@ const router = createBrowserRouter([
   {
     path: "/administrador",
     element:<PagAdmin/>
+  },
+
+  {
+    path: "/clientes-usuario",
+    element:<ListarClientesUsuario/>
   }
   
 ])

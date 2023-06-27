@@ -19,7 +19,7 @@ const CrearCliente = () => {
     const returnListadoClientes = useNavigate()
     
     const agregarCliente = async () => {
-        const urlImg= await subirImagen(img)
+        const urlImage= await subirImagen(img)
         const clienteColletion = collection(dataBase, "clientes")
         const cliente = {
             nombre, 
@@ -29,7 +29,7 @@ const CrearCliente = () => {
             direccion,
             barrio,
             ciudad,
-            urlImg
+            urlImage
         }
         
         await addDoc(clienteColletion, cliente)

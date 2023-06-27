@@ -5,9 +5,7 @@ import { Link} from "react-router-dom";
 import { MenuAdmin } from "../../MenuAdmin";
 
 const ListarClientes = () => {
-  /* const location = useLocation();
-  const { isAdmin } = location.state; */
-
+ 
   const [clientes, setClientes] = useState([]);
 
   const mostrarClientes = async () => {
@@ -69,8 +67,8 @@ const ListarClientes = () => {
               <td>{cliente.barrio}</td>
               <td>{cliente.ciudad}</td>
               <td>
-                <img src="" alt={cliente.nombre} />
-                {cliente.imagen}
+                <img src={cliente.urlImage} alt={cliente.nombre} />
+            
               </td>
               {admin && (
                 <td>
