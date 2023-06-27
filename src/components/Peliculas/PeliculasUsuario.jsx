@@ -1,15 +1,12 @@
 import Controlador from "./Controlador/Controlador";
-import { MenuUsuario } from "../MenuUsuario";
+import { MenuUsuario} from "../MenuUsuario"
 import superMario from "../../assets/imagenes/superMario.png";
 import guardians from "../../assets/imagenes/guardians.jpg"
 
-function PagUsuario() {
+function PeliculasUsuario() {
   return (
     <div>
-      <div>
-      <MenuUsuario/>
-      </div>
-
+        <MenuUsuario/>
       <main>
         <section className="banner"></section>
 
@@ -75,4 +72,4 @@ function PagUsuario() {
   );
 }
 
-export default PagUsuario;
+export default PeliculasUsuario;

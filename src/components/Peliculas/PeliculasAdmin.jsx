@@ -3,7 +3,7 @@ import { MenuAdmin } from "../MenuAdmin";
 import superMario from "../../assets/imagenes/superMario.png";
 import guardians from "../../assets/imagenes/guardians.jpg"
 
-function PagUsuario() {
+function PeliculasAdmin() {
   return (
     <div>
       <div>
@@ -75,4 +75,4 @@ function PagUsuario() {
   );
 }
 
-export default PagUsuario;
+export default PeliculasAdmin;

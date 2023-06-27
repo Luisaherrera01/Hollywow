@@ -1,12 +1,13 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Logo from "./components/Logo";
 import LoginAdmin from "./components/LoginAdmin"
-import Peliculas from "./components/Peliculas/PeliculasUsuario"
 import PagAdmin from "./components/Administrador/PagAdmin"
 import CrearCliente from "./components/Administrador/cliente/CrearCliente"
 import EditarCliente from "./components/Administrador/cliente/EditarCliente"
 import ListarCliente from "./components/Administrador/cliente/ListarCliente"
 import PagUsuario from "./components/Usuario/PagUsuario";
+import PeliculasAdmin from "./components/Peliculas/PeliculasAdmin";
+import PeliculasUsuario from "./components/Peliculas/PeliculasUsuario";
 
 const router = createBrowserRouter([
   {
@@ -24,8 +25,13 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "/peliculas",
-    element: <Peliculas />
+    path: "/peliculas-admin",
+    element: <PeliculasAdmin />
+  },
+
+  {
+    path: "/peliculas-usuario",
+    element: <PeliculasUsuario />
   },
 
   {
@@ -34,7 +40,7 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "/editar-cliente",
+    path: "/editar/:id",
     element: <EditarCliente/>
   }, 
 

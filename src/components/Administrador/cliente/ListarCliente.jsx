@@ -1,12 +1,12 @@
-import { collection, doc, getDocs, deleteDoc } from "firebase/firestore";
+import {collection,doc, getDocs,deleteDoc} from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { dataBase } from "../../config/DataBase";
-import { useLocation } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { MenuAdmin } from "../../MenuAdmin";
 
 const ListarClientes = () => {
-  const location = useLocation();
-  const { isAdmin } = location.state;
+  /* const location = useLocation();
+  const { isAdmin } = location.state; */
 
   const [clientes, setClientes] = useState([]);
 
@@ -20,14 +20,17 @@ const ListarClientes = () => {
   const eliminarCliente = async (id) => {
     const clienteEliminado = doc(dataBase, "clientes", id);
     await deleteDoc(clienteEliminado);
+    
+    mostrarClientes();
   };
 
-  const editarCliente = async (id) => {
-    const clienteEliminado = doc(dataBase, "clientes", id);
-    await deleteDoc(clienteEliminado);
-  };
+  {/*const editarCliente = async (id) => {
+    const editarCliente = doc(dataBase, "clientes", id);
+    await updateDoc(editarCliente);
+  mostrarClientes();
+  };*/}
 
-  const admin = isAdmin;
+  const admin = true;
 
   useEffect(() => {
     mostrarClientes();
@@ -38,6 +41,9 @@ const ListarClientes = () => {
   return (
     <section>
       <MenuAdmin />
+
+      <Link to={'/crear-cliente'}>Crear cliente</Link>
+
       <table className="table">
         <thead>
           <tr>
@@ -68,14 +74,10 @@ const ListarClientes = () => {
               </td>
               {admin && (
                 <td>
-                   <button onClick={() => editarCliente(cliente.id)}>
-                    Editar
-                  </button>
-                  <button onClick={() => eliminarCliente(cliente.id)}>
+                  <Link className="btn" to={'/editar/'+cliente.id}>Editar</Link>
+                  <button className="btn" onClick={() => eliminarCliente(cliente.id)}>
                     Eliminar
                   </button>
-                 
-                  {/*<Link to={"/editar-cliente/" + cliente.id}>Editar</Link>*/}
                 </td>
               )}
             </tr>

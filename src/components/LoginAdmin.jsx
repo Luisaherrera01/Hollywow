@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom";
 
 const nameAdmin = "admin";
 const passwordAdmin = "123";
@@ -19,7 +18,7 @@ function FormAdministrador() {
     ) {
       console.log("Es administrador");
       setErrorInput(false);
-      navigate('/administrador')
+      navigate("/administrador");
     } else {
       setErrorInput(true);
     }
@@ -36,7 +35,7 @@ function FormAdministrador() {
   return (
     <section className="login">
       <form className="login-form" onSubmit={validateForm}>
-      <h1 className="login-title"> Administrador</h1>
+        <h1 className="login-title"> Administrador</h1>
         <div>
           <label className="administrador">Administrador:</label>
           <input
@@ -51,11 +50,11 @@ function FormAdministrador() {
             onChange={handlePasswordInputChange}
           />
         </div>
-        {errorInput === true && <span className="text-danger">Usuario o contraseña no válido</span>}
-        {/*<button type="submit" className="btn login-boton mt-3">Ingresar</button>
-        <button type="submit" className="btn boton-regresar mt-3"> Volver</button>*/}
-        <Link to="/administrador">Ingresar </Link>
-        <Link to="/">Volver </Link>
+        {errorInput === true && (
+          <span className="text-danger">Usuario o contraseña no válido</span>
+        )}
+        <button type="submit" className="btn login-boton mt-3">Ingresar</button>
+        <Link to={"/"}><button type="submit" className="btn boton-regresar mt-3">Volver</button></Link>
         
       </form>
     </section>
@@ -63,5 +62,3 @@ function FormAdministrador() {
 }
 
 export default FormAdministrador;
-
-

@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { Link, } from "react-router-dom";
+
 
 export const MenuAdmin = () => {
   return (
@@ -25,19 +26,17 @@ export const MenuAdmin = () => {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link to={"/peliculas"} className="nav-link">
-                  {" "}
-                  Películas{" "}
+                <Link to={"/peliculas-admin"} className="nav-link">
+                  Películas
                 </Link>
               </li>
               <li className="nav-item">
                 <Link
                   to={"/listar-clientes"}
-                  state={{ isAdmin: true }}
+                  state={{ isAdmin: true }} 
                   className="nav-link"
                 >
-                  {" "}
-                  Clientes{" "}
+                  Clientes
                 </Link>
               </li>
 

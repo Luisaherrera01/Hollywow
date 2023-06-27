@@ -1,10 +1,12 @@
-import { collection, updateDoc,doc,getDoc } from "firebase/firestore"
+import { updateDoc,doc,getDoc } from "firebase/firestore"
 import { dataBase } from "../../config/DataBase"
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { useParams } from "react-router-dom"
+import { MenuAdmin } from "../../MenuAdmin"
 
 const EditarCliente = () => {
+
     const [nombre, setNombre] = useState("")
     const [documento, setDocumento] = useState("")
     const [correo, setCorreo] = useState("")
@@ -12,7 +14,6 @@ const EditarCliente = () => {
     const [direccion, setDireccion] = useState("")
     const [barrio, setBarrio] = useState("")
     const [ciudad, setCiudad] = useState("")
-    const [imagen, setImagen] = useState(null)
     const returnListadoClientes = useNavigate()
     const {id}= useParams()
     
@@ -25,43 +26,42 @@ const EditarCliente = () => {
             telefono,
             direccion,
             barrio,
-            ciudad,
-            imagen
-            
+            ciudad
         }
         
-        await updateDoc(clienteColletion, cliente)
-        returnListadoClientes("/listarCliente")
+        await updateDoc(clienteColletion, cliente, id)
+        returnListadoClientes("/listar-clientes")
     };
+    
     const clienteActualizado = async (id) => {
-        const cliente = await getDoc(doc(dataBase, "clientes", id))
-        setNombre(cliente.data().nombre)
-        setDocumento(cliente.data().documento)
-        setCorreo(cliente.data().correo)    
-        setTelefono(cliente.data().telefono) 
-        setDireccion(cliente.data().direccion) 
-        setBarrio(cliente.data().barrio) 
-        setCiudad(cliente.data().ciudad) 
-        setImagen(cliente.data().imagen)   
+        const clienteEditado = await getDoc(doc(dataBase, "clientes", id))
+        setNombre(clienteEditado.data().nombre)
+        setDocumento(clienteEditado.data().documento)
+        setCorreo(clienteEditado.data().correo)    
+        setTelefono(clienteEditado.data().telefono) 
+        setDireccion(clienteEditado.data().direccion) 
+        setBarrio(clienteEditado.data().barrio) 
+        setCiudad(clienteEditado.data().ciudad) 
+         
     }
     useEffect(() =>{
         clienteActualizado(id)
-    },[])
+    },[id])
 
     return (
        
         <section>
+            <MenuAdmin/>
             <form>
-                <input onChange={(e) => setNombre(e.target.value)} placeholder={"Nombre"} type={"text"} />
-                <input onChange={(e) => setDocumento(e.target.value)} placeholder={"Documento"} type={"text"} />
-                <input onChange={(e) => setCorreo(e.target.value)} placeholder={"Correo"} type={"email"} />
-                <input onChange={(e) => setTelefono(e.target.value)} placeholder={"Telefono"} type={"text"} />
-                <input onChange={(e) => setDireccion(e.target.value)} placeholder={"Dirección"} type={"text"} />
-                <input onChange={(e) => setBarrio(e.target.value)} placeholder={"Barrio"} type={"text"} />
-                <input onChange={(e) => setCiudad(e.target.value)} placeholder={"Ciudad"} type={"text"} />
-                <input onChange={(e) => setImagen(e.target.files[0])} placeholder={"Correo"} type={"file"} />
+                <input value= {nombre} onChange={(e) => setNombre(e.target.value)} placeholder={"Nombre"} type={"text"} />
+                <input value= {documento} onChange={(e) => setDocumento(e.target.value)} placeholder={"Documento"} type={"text"} />
+                <input value= {correo} onChange={(e) => setCorreo(e.target.value)} placeholder={"Correo"} type={"email"} />
+                <input value= {telefono} onChange={(e) => setTelefono(e.target.value)} placeholder={"Telefono"} type={"text"} />
+                <input value= {direccion} onChange={(e) => setDireccion(e.target.value)} placeholder={"Dirección"} type={"text"} />
+                <input value= {barrio} onChange={(e) => setBarrio(e.target.value)} placeholder={"Barrio"} type={"text"} />
+                <input value= {ciudad} onChange={(e) => setCiudad(e.target.value)} placeholder={"Ciudad"} type={"text"} />
                 
-                <input onClick={editarCliente()} type={"button"} value={"Editar cliente"}/>
+                <input onClick={editarCliente} type={"button"} value={"Editar cliente"}/>
             </form>
 
         </section>
