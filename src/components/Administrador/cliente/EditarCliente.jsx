@@ -14,6 +14,7 @@ const EditarCliente = () => {
     const [direccion, setDireccion] = useState("")
     const [barrio, setBarrio] = useState("")
     const [ciudad, setCiudad] = useState("")
+    const [img, setImg] = useState(null)
     const returnListadoClientes = useNavigate()
     const {id}= useParams()
     
@@ -26,7 +27,8 @@ const EditarCliente = () => {
             telefono,
             direccion,
             barrio,
-            ciudad
+            ciudad,
+            img
         }
         
         await updateDoc(clienteColletion, cliente, id)
@@ -42,6 +44,7 @@ const EditarCliente = () => {
         setDireccion(clienteEditado.data().direccion) 
         setBarrio(clienteEditado.data().barrio) 
         setCiudad(clienteEditado.data().ciudad) 
+        setImg(clienteEditado.data().img) 
          
     }
     useEffect(() =>{
@@ -60,6 +63,7 @@ const EditarCliente = () => {
                 <input value= {direccion} onChange={(e) => setDireccion(e.target.value)} placeholder={"Dirección"} type={"text"} />
                 <input value= {barrio} onChange={(e) => setBarrio(e.target.value)} placeholder={"Barrio"} type={"text"} />
                 <input value= {ciudad} onChange={(e) => setCiudad(e.target.value)} placeholder={"Ciudad"} type={"text"} />
+                <input value={img} onChange={(e) => setImg(e.target.value)} type={"file"}/>
                 
                 <input onClick={editarCliente} type={"button"} value={"Editar cliente"}/>
             </form>

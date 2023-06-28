@@ -1,8 +1,9 @@
-import { collection, updateDoc,doc,getDoc } from "firebase/firestore"
+import { updateDoc,doc,getDoc } from "firebase/firestore"
 import { dataBase } from "../../config/DataBase"
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { useParams } from "react-router-dom"
+import { MenuAdmin } from "../../MenuAdmin"
 
 const EditarProveedor = () => {
     const [nombre, setNombre] = useState("")
@@ -44,7 +45,7 @@ const EditarProveedor = () => {
     }
     useEffect(() =>{
         proveedorActualizado(id)
-    },[])
+    },[id])
 
     return ( 
         <section>

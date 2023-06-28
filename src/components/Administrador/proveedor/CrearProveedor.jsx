@@ -1,7 +1,8 @@
 import { collection, addDoc } from "firebase/firestore"
-import { dataBase } from "../../config/DataBase"
+import { dataBase, subirImagen } from "../../config/DataBase"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { MenuAdmin } from "../../MenuAdmin"
 
 const CrearProveedor = () => {
     const [nombre, setNombre] = useState("")
@@ -16,6 +17,7 @@ const CrearProveedor = () => {
     const returnListadoProveedores = useNavigate()
     
     const agregarProveedor = async () => {
+        const urlImgGerente= await subirImagen(imgGerente)
         const proveedorColletion = collection(dataBase, "proveedores")
         const proveedor = {
             nombre, 
@@ -24,14 +26,15 @@ const CrearProveedor = () => {
             nit,
             telefono,
             nombreGerente,
-            imgGerente,
+            urlImgGerente,
             logoEmpresa
         }      
         await addDoc(proveedorColletion, proveedor)
-        returnListadoProveedores("/listarProveedor")
+        returnListadoProveedores("/listar-proveedores")
     }
     return (
         <section>
+            <MenuAdmin/>
             <form>
                 <input onChange={(e) => setNombre(e.target.value)} placeholder={"Nombre"} type={"text"} />
                 <input onChange={(e) => setDireccion(e.target.value)} placeholder={"Direccion"} type={"text"} />

@@ -1,7 +1,6 @@
-import {collection,getDocs} from "firebase/firestore";
+import { collection,getDocs} from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { dataBase } from "../config/DataBase"
-import { Link} from "react-router-dom";
 import { MenuUsuario } from "../MenuUsuario";
 
 const ListarClientesUsuario = () => {
