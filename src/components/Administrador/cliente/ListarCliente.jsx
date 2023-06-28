@@ -34,22 +34,21 @@ const ListarClientes = () => {
       <Link to={'/crear-cliente'}>Crear cliente</Link>
     {clientes.map((cliente) => (
             <section key={cliente.id}>
-              <td scope="row">{cliente.nombre}</td>
-              <td>{cliente.documento}</td>
-              <td>{cliente.correo}</td>
-              <td>{cliente.telefono}</td>
-              <td>{cliente.direccion}</td>
-              <td>{cliente.barrio}</td>
-              <td>{cliente.ciudad}</td>
-              <td>
-                <img src={cliente.urlImage} alt={cliente.nombre} />
-            
-              </td>
+              <h1>{cliente.nombre}</h1>
+              <h3>{cliente.documento}</h3>
+              <h3>{cliente.correo}</h3>
+              <h3>{cliente.telefono}</h3>
+              <h3>{cliente.direccion}</h3>
+              <h3>{cliente.barrio}</h3>
+              <h3>{cliente.ciudad}</h3>
+              <section>
+                <img src={cliente.urlImage} alt={cliente.nombre} />            
+              </section>
               {admin && (
-                <td>
+                <section>
                   <Link className="btn" to={'/editarCliente/'+cliente.id}>Editar</Link>
                   <button className="btn" onClick={()=> eliminarCliente(cliente.id)}>Eliminar</button>
-                </td>
+                </section>
               )}
             </section>
           ))} 

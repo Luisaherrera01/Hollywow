@@ -8,6 +8,7 @@ import ListarCliente from "./components/Administrador/cliente/ListarCliente"
 import CrearContraseña from "./components/Administrador/contraseñas/CrearContraseña"
 import EditarContraseña from "./components/Administrador/contraseñas/EditarContraseña"
 import ListarContraseña from "./components/Administrador/contraseñas/ListarContraseña"
+
 import PagUsuario from "./components/Usuario/PagUsuario"
 import PeliculasAdmin from "./components/Peliculas/PeliculasAdmin"
 import PeliculasUsuario from "./components/Peliculas/PeliculasUsuario"

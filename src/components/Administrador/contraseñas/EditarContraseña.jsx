@@ -9,7 +9,7 @@ const EditarBovedaContraseña = () => {
     const [nombre, setNombre] = useState("")   
     const [contraseña, setContraseña] = useState("")
     const [usuario, setUsuario] = useState("")
-    const [imgWeb, setImgWeb] = useState(null)
+    const [imgWeb, setImgWeb] = useState("")
     const returnListadoBovedas = useNavigate()
     const {id}= useParams()
     
@@ -44,9 +44,8 @@ const EditarBovedaContraseña = () => {
                 <input value={nombre} onChange={(e) => setNombre(e.target.value)} placeholder={"Nombre"} type={"text"}/>
                 <input value={contraseña} onChange={(e) => setContraseña(e.target.value)} placeholder={"Contraseña"} type={"text"}/>
                 <input value={usuario} onChange={(e) => setUsuario(e.target.value)} placeholder={"Usuario"} type={"text"}/>
-                <input value={imgWeb} onChange={(e) => setImgWeb(e.target.files[0])} placeholder={"Imagen del sitio web"} type={"file"} />
+                <input value={imgWeb} onChange={(e) => setImgWeb(e.target.value)} type={"file"}/>
                 
-
                 <input onClick={editarBovedaContraseña} type={"button"} value={"Editar boveda"}/>
             </form>
         </section>

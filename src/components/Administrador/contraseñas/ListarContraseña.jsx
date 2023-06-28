@@ -15,8 +15,8 @@ const ListarBovedasDeContraseña = () => {
   };
 
   const eliminarBovedaDeContraseña = async(id)=>{
-    const bovedaEliminada = doc(dataBase,"bovedas", id)
-    await deleteDoc(bovedaEliminada)
+    const bovedaEliminada = doc(dataBase,"bovedas", id);
+    await deleteDoc(bovedaEliminada);
     
     mostrarBovedasDeContraseña();
   };  
@@ -38,8 +38,7 @@ const ListarBovedasDeContraseña = () => {
             <h3>{boveda.contraseña}</h3>
             <h3>{boveda.usuario}</h3>
             <section>
-              <img>{boveda.imgWeb}</img>
-              <img>{boveda.urlImg}</img>
+              <img src={boveda.urlImage} alt={boveda.nombre}/>            
             </section>
             {admin &&(
               <section>
