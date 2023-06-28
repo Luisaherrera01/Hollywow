@@ -63,7 +63,7 @@ const ListarProveedores = () => {
               </td>
               {admin && (
                 <td>
-                  <Link className="btn" to={'/editar/'+proveedor.id}>Editar</Link>
+                  <Link className="btn" to={'/editar-proveedor/'+proveedor.id}>Editar</Link>
                   <button className="btn" onClick={() => eliminarProveedor(proveedor.id)}>
                     Eliminar
                   </button>

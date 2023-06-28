@@ -70,7 +70,7 @@ const ListarClientes = () => {
           </div>
           {admin && (
             <div className="card-acciones">
-              <Link classNameName="btn" to={"/editar/" + cliente.id}>
+              <Link className="btn" to={"/editar-cliente/" + cliente.id}>
                 Editar
               </Link>
               <button

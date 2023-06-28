@@ -57,7 +57,7 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "/editarCliente/:id",
+    path: "/editar-cliente/:id",
     element: <EditarCliente/>
   }, 
 
@@ -102,7 +102,7 @@ const router = createBrowserRouter([
   },
 
   {
-    path:"/editarProducto/:id",
+    path:"/editar-producto/:id",
     element: <EditarProducto/>
   },
 
@@ -117,7 +117,7 @@ const router = createBrowserRouter([
   },
 
   {
-    path:"/editarProveedor/:id",
+    path:"/editar-proveedor/:id",
     element: <EditarProveedor/>
   },
 

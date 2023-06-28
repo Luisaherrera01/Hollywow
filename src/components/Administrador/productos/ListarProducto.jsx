@@ -64,7 +64,7 @@ const ListarProductos = () => {
               </td>
               {admin && (
                 <td>
-                  <Link className="btn" to={"/editar/" + producto.id}>
+                  <Link className="btn" to={"/editar-producto/" + producto.id}>
                     Editar
                   </Link>
                   <button

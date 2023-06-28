@@ -26,7 +26,7 @@ const CrearProveedor = () => {
             nit,
             telefono,
             nombreGerente,
-            urlImage
+            urlImage,
             urlImgGerente,
             logoEmpresa
         }      
