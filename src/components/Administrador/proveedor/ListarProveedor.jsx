@@ -1,17 +1,16 @@
 import{collection,doc,getDocs,deleteDoc} from "firebase/firestore"
 import { useEffect, useState } from "react"
 import { dataBase } from "../../config/DataBase"
-import { Link } from "react-router-dom";
-import { MenuAdmin } from "../../MenuAdmin";
+import { Link } from "react-router-dom"
+import { MenuAdmin } from "../../MenuAdmin"
 
 const ListarProveedores = () => {
-  const[proveedores,setProveedores]=useState([]);
+  const [proveedores,setProveedores] = useState([]);
 
   const mostrarProveedores = async() => {
     const proveedoresCollection = collection(dataBase,"proveedores");
     const data = await getDocs(proveedoresCollection);
     
-    console.log(data.docs);
     setProveedores(data.docs.map((doc)=>({...doc.data(),id:doc.id})));
   };
 
@@ -32,6 +31,7 @@ const ListarProveedores = () => {
   return (
     <section>
       <MenuAdmin/>
+
       <Link to={'/crear-proveedor'}>Crear Proveedor</Link>
 
       <table className="table">
@@ -77,8 +77,5 @@ const ListarProveedores = () => {
        );
      };
      
-     export default ListarProveedores;
-                
-                    
-
+export default ListarProveedores;
        

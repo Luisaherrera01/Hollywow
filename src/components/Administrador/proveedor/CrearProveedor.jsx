@@ -13,10 +13,10 @@ const CrearProveedor = () => {
     const [nombreGerente, setNombreGerente] = useState("")
     const [imgGerente, setImgGerente] = useState(null)
     const [logoEmpresa, setLogoEmpresa] = useState(null)
-
     const returnListadoProveedores = useNavigate()
     
     const agregarProveedor = async () => {
+        const urlImage= await subirImagen(imgGerente, logoEmpresa)
         const urlImgGerente= await subirImagen(imgGerente)
         const proveedorColletion = collection(dataBase, "proveedores")
         const proveedor = {
@@ -26,6 +26,7 @@ const CrearProveedor = () => {
             nit,
             telefono,
             nombreGerente,
+            urlImage
             urlImgGerente,
             logoEmpresa
         }      
@@ -42,10 +43,10 @@ const CrearProveedor = () => {
                 <input onChange={(e) => setNit(e.target.value)} placeholder={"Nit"} type={"text"} />
                 <input onChange={(e) => setTelefono(e.target.value)} placeholder={"Telefono"} type={"text"} />
                 <input onChange={(e) => setNombreGerente(e.target.value)} placeholder={"Nombre de Gerente"} type={"text"} />
+                <input onChange={(e) => setImgGerente(e.target.files[0])} type="file" />
+                <input onChange={(e) => setLogoEmpresa(e.target.files[0])} type="file"/>
 
-                <input onChange={(e) => setImgGerente(e.target.files[0])} placeholder={"Imagen"} type={"file"} />
-                <input onChange={(e) => setLogoEmpresa(e.target.files[0])} placeholder={"Logo"} type={"file"} />
-                <input onClick={agregarProveedor()} type={"button"} value={"agregar proveedor"} />
+                <input onClick={agregarProveedor} type={"button"} value={"agregar proveedor"}/>
             </form>
         </section>
     )

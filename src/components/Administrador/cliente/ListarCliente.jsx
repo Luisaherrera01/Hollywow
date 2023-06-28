@@ -7,11 +7,11 @@ import { MenuAdmin } from "../../MenuAdmin";
 const ListarClientes = () => {
   const [clientes, setClientes] = useState([]);
 
-  const mostrarClientes = async () => {
+   const mostrarClientes = async() => {
     const clientesCollection = collection(dataBase, "clientes");
     const data = await getDocs(clientesCollection);
 
-    setClientes(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    setClientes(data.docs.map((doc)=>({ ...doc.data(),id:doc.id})));
   };
 
   const eliminarCliente = async (id) => {
@@ -34,7 +34,6 @@ const ListarClientes = () => {
   useEffect(() => {
     mostrarClientes();
   }, []);
-
   console.log(clientes);
 
   return (

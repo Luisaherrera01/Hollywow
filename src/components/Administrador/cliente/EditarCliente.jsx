@@ -6,7 +6,6 @@ import { useParams } from "react-router-dom"
 import { MenuAdmin } from "../../MenuAdmin"
 
 const EditarCliente = () => {
-
     const [nombre, setNombre] = useState("")
     const [documento, setDocumento] = useState("")
     const [correo, setCorreo] = useState("")
@@ -14,7 +13,7 @@ const EditarCliente = () => {
     const [direccion, setDireccion] = useState("")
     const [barrio, setBarrio] = useState("")
     const [ciudad, setCiudad] = useState("")
-    const [img, setImg] = useState(null)
+    const [img, setImg]=useState("")
     const returnListadoClientes = useNavigate()
     const {id}= useParams()
     
@@ -29,12 +28,12 @@ const EditarCliente = () => {
             barrio,
             ciudad,
             img
-        }
-        
+        }        
+
         await updateDoc(clienteColletion, cliente, id)
         returnListadoClientes("/listar-clientes")
     };
-    
+
     const clienteActualizado = async (id) => {
         const clienteEditado = await getDoc(doc(dataBase, "clientes", id))
         setNombre(clienteEditado.data().nombre)
@@ -43,16 +42,14 @@ const EditarCliente = () => {
         setTelefono(clienteEditado.data().telefono) 
         setDireccion(clienteEditado.data().direccion) 
         setBarrio(clienteEditado.data().barrio) 
-        setCiudad(clienteEditado.data().ciudad) 
-        setImg(clienteEditado.data().img) 
-         
+        setCiudad(clienteEditado.data().ciudad)
+        setImg(clienteEditado.data().img)         
     }
     useEffect(() =>{
         clienteActualizado(id)
     },[id])
 
-    return (
-       
+    return (       
         <section>
             <MenuAdmin/>
             <form>
@@ -64,12 +61,9 @@ const EditarCliente = () => {
                 <input value= {barrio} onChange={(e) => setBarrio(e.target.value)} placeholder={"Barrio"} type={"text"} />
                 <input value= {ciudad} onChange={(e) => setCiudad(e.target.value)} placeholder={"Ciudad"} type={"text"} />
                 <input value={img} onChange={(e) => setImg(e.target.value)} type={"file"}/>
-                
                 <input onClick={editarCliente} type={"button"} value={"Editar cliente"}/>
             </form>
-
         </section>
-
     )
 }
 

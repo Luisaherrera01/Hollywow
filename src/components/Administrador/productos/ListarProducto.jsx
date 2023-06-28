@@ -1,15 +1,17 @@
-import { collection, doc, getDocs, deleteDoc } from "firebase/firestore";
-import { useEffect, useState } from "react";
-import { dataBase } from "../../config/DataBase";
-import { Link } from "react-router-dom";
-import { MenuAdmin } from "../../MenuAdmin";
+import{collection,doc,getDocs,deleteDoc} from "firebase/firestore"
+import { useEffect, useState } from "react"
+import { dataBase } from "../../config/DataBase"
+import { Link } from "react-router-dom"
+import { MenuAdmin } from "../../MenuAdmin"
+
 
 const ListarProductos = () => {
-  const [productos, setProductos] = useState([]);
+  const [productos,setProductos] = useState([]);
 
   const mostrarProductos = async () => {
     const productosCollection = collection(dataBase, "productos");
     const data = await getDocs(productosCollection);
+
 
     console.log(data.docs);
     setProductos(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
@@ -81,4 +83,4 @@ const ListarProductos = () => {
   );
 };
 
-export default ListarProductos;
+export default ListarProductos
