@@ -34,14 +34,14 @@ const ListarProductos = () => {
       <MenuAdmin />
       <Link to={'/crear-producto'}>Crear producto</Link>
     {productos.map((producto)=>(
-        <section key={producto.id}>
+            <section key={producto.id}>
             <h1>{producto.nombre}</h1>
             <h3>{producto.descripcion}</h3>
             <h3>{producto.categoria}</h3>
             <h3>{producto.cantidad}</h3>
             <h3>{producto.valor}</h3>
             <section>
-              <img>{producto.imagen}</img>
+              <img src={producto.urlImage} alt={producto.nombre}/>
             </section>
             {admin &&(
               <section>

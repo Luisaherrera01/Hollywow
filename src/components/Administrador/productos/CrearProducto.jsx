@@ -22,7 +22,7 @@ const CrearProducto = () => {
             categoria,
             cantidad,
             valor,
-            imagen
+            urlImage
         }        
         await addDoc(productoColletion, producto)
         returnListadoProductos("/listar-productos")
@@ -36,9 +36,9 @@ const CrearProducto = () => {
                 <input onChange={(e) => setCategoria(e.target.value)} placeholder={"Categoria"} type={"text"} />
                 <input onChange={(e) => setCantidad(e.target.value)} placeholder={"Cantidad"} type={"text"} />
                 <input onChange={(e) => setValor(e.target.value)} placeholder={"Valor"} type={"text"} />
-                <input onChange={(e) => setImagen(e.target.files[0])} type={"file"}/>
+                <input onChange={(e) => setImagen(e.target.files[0])} type="file"/>
 
-                <input onClick={agregarProducto} type={"button"} value={"agregar producto"}/>
+                <input onClick={agregarProducto} type={"button"} value={"Agregar producto"}/>
             </form>
         </section>
     )

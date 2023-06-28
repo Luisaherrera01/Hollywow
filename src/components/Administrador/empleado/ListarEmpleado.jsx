@@ -33,7 +33,7 @@ const ListarEmpleados = () => {
       <MenuAdmin />
       <Link to={'/crear-empleado'}>Crear empleado</Link>
     {empleados.map((empleado)=>(
-        <section key={empleado.id}>
+           <section key={empleado.id}>
             <h1>{empleado.nombre}</h1>
             <h3>{empleado.documento}</h3>
             <h3>{empleado.correo}</h3>
@@ -42,7 +42,7 @@ const ListarEmpleados = () => {
             <h3>{empleado.direccion}</h3>
             <h3>{empleado.numeroCuentaBancaria}</h3>
             <section>
-              <img>{empleado.imagen}</img>
+              <img src={empleado.urlImage} alt={empleado.nombre}/>
             </section>
             {admin &&(
               <section>

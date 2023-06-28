@@ -1,5 +1,5 @@
 import { collection, addDoc } from "firebase/firestore"
-import { dataBase, subirImagenBoveda} from "../../config/DataBase.jsx"
+import { dataBase, subirImagen} from "../../config/DataBase.jsx"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { MenuAdmin } from "../../MenuAdmin"
@@ -12,7 +12,7 @@ const CrearBovedaContraseña = () => {
     const returnListadoBovedas = useNavigate()
     
     const agregarBovedaContraseña = async () => {
-        const urlImage = await subirImagenBoveda(imgWeb)
+        const urlImage = await subirImagen(imgWeb)
         const bovedaColletion = collection(dataBase, "bovedas")
         const boveda = {
             nombre, 

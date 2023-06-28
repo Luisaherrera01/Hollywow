@@ -21,6 +21,8 @@ const ListarProveedores = () => {
     mostrarProveedores();      
   };
 
+  const admin = true;
+
   useEffect(()=>{
     mostrarProveedores();
   },[]); 
@@ -29,9 +31,9 @@ const ListarProveedores = () => {
   return (
     <section>
       <MenuAdmin/>
-      <Link to={"/crear-proveedor"}>Crear Contraseña</Link>
+      <Link to={"/crear-proveedor"}>Crear Proveedor</Link>
     {proveedores.map((proveedor)=>(
-        <section key={proveedor.id}>
+            <section key={proveedor.id}>
             <h1>{proveedor.nombre}</h1>
             <h3>{proveedor.direccion}</h3>
             <h3>{proveedor.ciudad}</h3>   
@@ -39,13 +41,13 @@ const ListarProveedores = () => {
             <h3>{proveedor.telefono}</h3>
             <h3>{proveedor.nombreGerente}</h3>
             <section>   
-              <img>{proveedor.imgGerente}</img>   
-              <img>{proveedor.logoEmpresa}</img>
+              <img src={proveedor.urlImage} alt={proveedor.nommbre}/>   
+            //no se si con este llamado me permite llamar las dos img: logo, imgGerente
             </section> 
             {admin &&(
               <section>
                 <Link className="btn" to={"/editarProveedor/"+proveedor.id}>Editar</Link>
-                <button className="btn" onClick={()=> eliminarBovedaDeContraseña(boveda.id)}>Eliminar</button>
+                <button className="btn" onClick={()=> eliminarProveedor(proveedor.id)}>Eliminar</button>
               </section>
             )}                  
         </section>

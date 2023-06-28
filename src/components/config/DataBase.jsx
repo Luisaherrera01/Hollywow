@@ -23,11 +23,3 @@ export const subirImagen = async (image) => {
 
   return urlImg;
 };
-
-export const subirImagenBoveda = async (imagen) => {
-  const subirImagen = ref(storage, v1());
-  await uploadBytes(subirImagen, imagen);
-  const urlImgBoveda = await getDownloadURL(subirImagen);
-
-  return urlImgBoveda;
-};

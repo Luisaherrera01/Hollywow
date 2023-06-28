@@ -12,8 +12,8 @@ const EditarProveedor = () => {
     const [nit, setNit] = useState("")
     const [telefono, setTelefono] = useState("")
     const [nombreGerente, setNombreGerente] = useState("")
-    const [imgGerente, setImgGerente] = useState(null)
-    const [logoEmpresa, setLogoEmpresa] = useState(null)
+    const [imgGerente, setImgGerente] = useState("")
+    const [logoEmpresa, setLogoEmpresa] = useState("")
     const returnListadoProveedores = useNavigate()
     const {id}= useParams()
   
@@ -30,7 +30,7 @@ const EditarProveedor = () => {
             logoEmpresa            
         }
         await updateDoc(proveedorColletion, proveedor,id)
-        returnListadoProveedores("/listar-proveedor")
+        returnListadoProveedores("/listar-proveedores")
     };
 
     const proveedorActualizado = async (id) => {
@@ -58,8 +58,8 @@ const EditarProveedor = () => {
                 <input value={nit} onChange={(e) => setNit(e.target.value)} placeholder={"Nit"} type={"text"} />
                 <input value={telefono} onChange={(e) => setTelefono(e.target.value)} placeholder={"Telefono"} type={"text"} />
                 <input value={nombreGerente} onChange={(e) => setNombreGerente(e.target.value)} placeholder={"Nombre de Gerente"} type={"text"} />
-                <input value={imgGerente} onChange={(e) => setImgGerente(e.target.files[0])} placeholder={"Imagen"} type={"file"} />
-                <input value={logoEmpresa} onChange={(e) => setLogoEmpresa(e.target.files[0])} placeholder={"Logo"} type={"file"} />
+                <input value={imgGerente} onChange={(e) => setImgGerente(e.target.value)} type={"file"}/>
+                <input value={logoEmpresa} onChange={(e) => setLogoEmpresa(e.target.value)} type={"file"}/>
 
                 <input onClick={editarProveedor} type={"button"} value={"Editar proveedor"}/>
             </form>

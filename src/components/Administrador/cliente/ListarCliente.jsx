@@ -33,7 +33,7 @@ const ListarClientes = () => {
       <MenuAdmin />
       <Link to={'/crear-cliente'}>Crear cliente</Link>
     {clientes.map((cliente) => (
-            <section key={cliente.id}>
+              <section key={cliente.id}>
               <h1>{cliente.nombre}</h1>
               <h3>{cliente.documento}</h3>
               <h3>{cliente.correo}</h3>
@@ -42,7 +42,7 @@ const ListarClientes = () => {
               <h3>{cliente.barrio}</h3>
               <h3>{cliente.ciudad}</h3>
               <section>
-                <img src={cliente.urlImage} alt={cliente.nombre} />            
+                <img src={cliente.urlImage} alt={cliente.nombre}/>            
               </section>
               {admin && (
                 <section>

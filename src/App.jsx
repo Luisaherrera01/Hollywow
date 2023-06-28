@@ -8,12 +8,23 @@ import ListarCliente from "./components/Administrador/cliente/ListarCliente"
 import CrearContraseña from "./components/Administrador/contraseñas/CrearContraseña"
 import EditarContraseña from "./components/Administrador/contraseñas/EditarContraseña"
 import ListarContraseña from "./components/Administrador/contraseñas/ListarContraseña"
-
+import CrearEmpleado from "./components/Administrador/empleado/CrearEmpleado"
+import EditarEmpleado from "./components/Administrador/empleado/EditarEmpleado"
+import ListarEmpleado from "./components/Administrador/empleado/ListarEmpleado"
+import CrearProducto from "./components/Administrador/productos/CrearProducto"
+import EditarProducto from "./components/Administrador/productos/EditarProducto"
+import ListarProducto from "./components/Administrador/productos/ListarProducto"
+import CrearProveedor from "./components/Administrador/proveedor/CrearProveedor"
+import EditarProveedor from "./components/Administrador/proveedor/EditarProveedor"
+import ListarProveedor from "./components/Administrador/proveedor/ListarProveedor"
 import PagUsuario from "./components/Usuario/PagUsuario"
 import PeliculasAdmin from "./components/Peliculas/PeliculasAdmin"
 import PeliculasUsuario from "./components/Peliculas/PeliculasUsuario"
 import ListarClientesUsuario from "./components/Usuario/ListarClientesUsuario"
 import ListarContraseñasUsuario from "./components/Usuario/ListarContraseñasUsuario"
+import ListarEmpleadosUsuario from"./components/Usuario/ListarEmpleadosUsuario"
+import ListarProductosUsuario from "./components/Usuario/ListarProductosUsuario"
+import ListarProveedoresUsuario from "./components/Usuario/ListarProveedoresUsuario"
 
 const router = createBrowserRouter([
   {
@@ -69,7 +80,7 @@ const router = createBrowserRouter([
     path:"/listar-bovedas",
     element: <ListarContraseña/>
   },
-/*
+
   {
     path:"/crear-empleado",
     element: <CrearEmpleado/>
@@ -107,13 +118,13 @@ const router = createBrowserRouter([
 
   {
     path:"/editarProveedor/:id",
-    element: <EditarProducto/>
+    element: <EditarProveedor/>
   },
 
   {
     path:"/listar-proveedores",
-    element: <ListarProducto/>
-  }*/
+    element: <ListarProveedor/>
+  },
 
   {
     path: "/usuario",
@@ -135,22 +146,20 @@ const router = createBrowserRouter([
     element:<ListarContraseñasUsuario/>
   },
 
-
-/*  {
-    path: "/productos-usuario",
-    element:<ListarProductosUsuario/>
-  },
-
-  
   {
     path: "/empleados-usuario",
     element:<ListarEmpleadosUsuario/>
   },
 
   {
+    path: "/productos-usuario",
+    element:<ListarProductosUsuario/>
+  },
+
+  {
     path: "/proveedores-usuario",
     element:<ListarProveedoresUsuario/>
-  }*/
+  }
     
 ])
 

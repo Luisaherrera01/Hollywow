@@ -11,7 +11,7 @@ const EditarProducto = () => {
     const [categoria, setCategoria] = useState("")
     const [cantidad, setCantidad] = useState("")
     const [valor, setValor] = useState("")
-    const [imagen, setImagen] = useState(null)
+    const [imagen, setImagen] = useState("")
     const returnListadoProductos = useNavigate()
     const {id}= useParams()
    
@@ -51,7 +51,7 @@ const EditarProducto = () => {
                 <input value={categoria} onChange={(e) => setCategoria(e.target.value)} placeholder={"Categoria"} type={"text"} />
                 <input value={cantidad} onChange={(e) => setCantidad(e.target.value)} placeholder={"Cantidad"} type={"text"} />
                 <input value={valor} onChange={(e) => setValor(e.target.value)} placeholder={"Valor"} type={"text"} />
-                <input value={imagen} onChange={(e) => setImagen(e.target.files[0])} type={"file"}/>
+                <input value={imagen} onChange={(e) => setImagen(e.target.value)} type={"file"}/>
      
                 <input onClick={editarProducto} type={"button"} value={"Editar producto"}/>
             </form>

@@ -59,7 +59,7 @@ const EditarEmpleado = () => {
                 <input value={salario} onChange={(e) => setSalario(e.target.value)} placeholder={"Cargo"} type={"text"} />
                 <input value={direccion} onChange={(e) => setDireccion(e.target.value)} placeholder={"Dirección"} type={"text"} />
                 <input value={numeroCuentaBancaria} onChange={(e) => setNumeroCuentaBancaria(e.target.value)} placeholder={"Número Cuenta Bancaria"} type={"text"} />
-                <input value={imagen} onChange={(e) => setImagen(e.target.files)} type={"file"}/>
+                <input value={imagen} onChange={(e) => setImagen(e.target.value)} type={"file"}/>
 
                 <input onClick={editarEmpleado} type={"button"} value={"Editar empleado"}/>
             </form>
