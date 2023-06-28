@@ -1,5 +1,5 @@
 import { collection, addDoc } from "firebase/firestore"
-import { dataBase,subirImagen } from "../../config/DataBase"
+import { dataBase, subirImagen } from "../../config/DataBase"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { MenuAdmin } from "../../MenuAdmin"
@@ -17,6 +17,7 @@ const CrearProveedor = () => {
     
     const agregarProveedor = async () => {
         const urlImage= await subirImagen(imgGerente, logoEmpresa)
+        const urlImgGerente= await subirImagen(imgGerente)
         const proveedorColletion = collection(dataBase, "proveedores")
         const proveedor = {
             nombre, 
@@ -26,6 +27,8 @@ const CrearProveedor = () => {
             telefono,
             nombreGerente,
             urlImage
+            urlImgGerente,
+            logoEmpresa
         }      
         await addDoc(proveedorColletion, proveedor)
         returnListadoProveedores("/listar-proveedores")

@@ -6,12 +6,13 @@ import { useParams } from "react-router-dom"
 import { MenuAdmin } from "../../MenuAdmin"
 
 const EditarProducto = () => {
+    
     const [nombre, setNombre] = useState("")
-    const [descripcion, setDescripcion] = useState("")
-    const [categoria, setCategoria] = useState("")
     const [cantidad, setCantidad] = useState("")
     const [valor, setValor] = useState("")
-    const [imagen, setImagen] = useState("")
+    const [descripcion, setDescripcion] = useState("")
+    const [categoria, setCategoria] = useState("")
+    const [imagen, setImagen] = useState(null)
     const returnListadoProductos = useNavigate()
     const {id}= useParams()
    
@@ -19,13 +20,14 @@ const EditarProducto = () => {
         const productoColletion = doc(dataBase, "productos", id)
         const producto = {
             nombre, 
-            descripcion, 
-            categoria,
-            cantidad,
+            cantidad, 
             valor,
+            descripcion,
+            categoria,
             imagen
         }        
         await updateDoc(productoColletion, producto,id)
+
         returnListadoProductos("/listar-productos")
     };
 
@@ -52,7 +54,6 @@ const EditarProducto = () => {
                 <input value={cantidad} onChange={(e) => setCantidad(e.target.value)} placeholder={"Cantidad"} type={"text"} />
                 <input value={valor} onChange={(e) => setValor(e.target.value)} placeholder={"Valor"} type={"text"} />
                 <input value={imagen} onChange={(e) => setImagen(e.target.value)} type={"file"}/>
-     
                 <input onClick={editarProducto} type={"button"} value={"Editar producto"}/>
             </form>
         </section>

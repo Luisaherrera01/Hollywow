@@ -29,6 +29,7 @@ const EditarCliente = () => {
             ciudad,
             img
         }        
+
         await updateDoc(clienteColletion, cliente, id)
         returnListadoClientes("/listar-clientes")
     };
@@ -60,7 +61,6 @@ const EditarCliente = () => {
                 <input value= {barrio} onChange={(e) => setBarrio(e.target.value)} placeholder={"Barrio"} type={"text"} />
                 <input value= {ciudad} onChange={(e) => setCiudad(e.target.value)} placeholder={"Ciudad"} type={"text"} />
                 <input value={img} onChange={(e) => setImg(e.target.value)} type={"file"}/>
-
                 <input onClick={editarCliente} type={"button"} value={"Editar cliente"}/>
             </form>
         </section>

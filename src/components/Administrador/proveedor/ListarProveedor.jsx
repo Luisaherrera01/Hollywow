@@ -15,11 +15,11 @@ const ListarProveedores = () => {
   };
 
   const eliminarProveedor = async(id)=>{
-    const proveedorEliminado = doc(dataBase,"proveedores", id);
-    await deleteDoc(proveedorEliminado); 
-
-    mostrarProveedores();      
-  };
+    const proveedorEliminado = doc(dataBase,"proveedores", id)
+    await deleteDoc(proveedorEliminado) ;
+    
+    mostrarProveedores();
+  }  
 
   const admin = true;
 
@@ -31,29 +31,51 @@ const ListarProveedores = () => {
   return (
     <section>
       <MenuAdmin/>
-      <Link to={"/crear-proveedor"}>Crear Proveedor</Link>
-    {proveedores.map((proveedor)=>(
-            <section key={proveedor.id}>
-            <h1>{proveedor.nombre}</h1>
-            <h3>{proveedor.direccion}</h3>
-            <h3>{proveedor.ciudad}</h3>   
-            <h3>{proveedor.nit}</h3>   
-            <h3>{proveedor.telefono}</h3>
-            <h3>{proveedor.nombreGerente}</h3>
-            <section>   
-              <img src={proveedor.urlImage} alt={proveedor.nommbre}/>   
-            //no se si con este llamado me permite llamar las dos img: logo, imgGerente
-            </section> 
-            {admin &&(
-              <section>
-                <Link className="btn" to={"/editarProveedor/"+proveedor.id}>Editar</Link>
-                <button className="btn" onClick={()=> eliminarProveedor(proveedor.id)}>Eliminar</button>
-              </section>
-            )}                  
-        </section>
-      ))}
-    </section>
-  );
-};
 
-export default ListarProveedores
+      <Link to={'/crear-proveedor'}>Crear Proveedor</Link>
+
+      <table className="table">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Dirección</th>
+            <th scope="col">Ciudad</th>
+            <th scope="col">Nit</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">NombreGerente</th>
+            <th scope="col">ImgGerente</th>
+            <th scope="col">LogoEmpresa</th>
+            {admin && <th scope="col">Acciones</th>}
+          </tr>
+        </thead>
+        <tbody>
+    {proveedores.map((proveedor)=>(
+        <tr key={proveedor.id}>
+           <td scope="row">{proveedor.nombre}</td>
+              <td>{proveedor.direccion}</td>
+              <td>{proveedor.ciudad}</td>
+              <td>{proveedor.nit}</td>
+              <td>{proveedor.telefono}</td>
+              <td>{proveedor.nombreGerente}</td>
+              <td>{proveedor.logoEmpresa}</td>
+              <td>
+                <img src={proveedor.urlImage} alt={proveedor.nombre} />
+              </td>
+              {admin && (
+                <td>
+                  <Link className="btn" to={'/editar/'+proveedor.id}>Editar</Link>
+                  <button className="btn" onClick={() => eliminarProveedor(proveedor.id)}>
+                    Eliminar
+                  </button>
+                </td>
+                 )}
+                 </tr>
+               ))}
+             </tbody>
+           </table>
+         </section>
+       );
+     };
+     
+export default ListarProveedores;
+       
