@@ -4,8 +4,6 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { MenuAdmin } from "../../MenuAdmin"
 
-
-
 const CrearCliente = () => {
     const [nombre, setNombre] = useState("")
     const [documento, setDocumento] = useState("")
@@ -15,7 +13,6 @@ const CrearCliente = () => {
     const [barrio, setBarrio] = useState("")
     const [ciudad, setCiudad] = useState("")
     const [img, setImg] = useState(null)
-
     const returnListadoClientes = useNavigate()
     
     const agregarCliente = async () => {
@@ -30,11 +27,9 @@ const CrearCliente = () => {
             barrio,
             ciudad,
             urlImage
-        }
-        
+        }        
         await addDoc(clienteColletion, cliente)
         returnListadoClientes("/listar-clientes")
-
     }
     return (
         <section>
@@ -49,8 +44,7 @@ const CrearCliente = () => {
                 <input onChange={(e) => setCiudad(e.target.value)} placeholder={"Ciudad"} type={"text"} />
                 <input onChange={(e) => setImg(e.target.files[0])} type="file" />
 
-               <input onClick={agregarCliente} type={"button"} value={"agregar cliente"} />
-               
+               <input onClick={agregarCliente} type={"button"} value={"Agregar cliente"}/>               
             </form>
         </section>
     )

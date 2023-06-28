@@ -2,6 +2,7 @@ import { collection, addDoc } from "firebase/firestore"
 import { dataBase } from "../../config/DataBase"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { MenuAdmin } from "../../MenuAdmin"
 
 const CrearProveedor = () => {
     const [nombre, setNombre] = useState("")
@@ -12,10 +13,10 @@ const CrearProveedor = () => {
     const [nombreGerente, setNombreGerente] = useState("")
     const [imgGerente, setImgGerente] = useState(null)
     const [logoEmpresa, setLogoEmpresa] = useState(null)
-
     const returnListadoProveedores = useNavigate()
     
     const agregarProveedor = async () => {
+        const urlImage= await subirImagen(imgGerente, logoEmpresa)
         const proveedorColletion = collection(dataBase, "proveedores")
         const proveedor = {
             nombre, 
@@ -24,14 +25,14 @@ const CrearProveedor = () => {
             nit,
             telefono,
             nombreGerente,
-            imgGerente,
-            logoEmpresa
+            urlImage
         }      
         await addDoc(proveedorColletion, proveedor)
-        returnListadoProveedores("/listarProveedor")
+        returnListadoProveedores("/listar-proveedores")
     }
     return (
         <section>
+            <MenuAdmin/>
             <form>
                 <input onChange={(e) => setNombre(e.target.value)} placeholder={"Nombre"} type={"text"} />
                 <input onChange={(e) => setDireccion(e.target.value)} placeholder={"Direccion"} type={"text"} />
@@ -39,10 +40,10 @@ const CrearProveedor = () => {
                 <input onChange={(e) => setNit(e.target.value)} placeholder={"Nit"} type={"text"} />
                 <input onChange={(e) => setTelefono(e.target.value)} placeholder={"Telefono"} type={"text"} />
                 <input onChange={(e) => setNombreGerente(e.target.value)} placeholder={"Nombre de Gerente"} type={"text"} />
-
                 <input onChange={(e) => setImgGerente(e.target.files[0])} placeholder={"Imagen"} type={"file"} />
                 <input onChange={(e) => setLogoEmpresa(e.target.files[0])} placeholder={"Logo"} type={"file"} />
-                <input onClick={agregarProveedor()} type={"button"} value={"agregar proveedor"} />
+
+                <input onClick={agregarProveedor} type={"button"} value={"agregar proveedor"}/>
             </form>
         </section>
     )

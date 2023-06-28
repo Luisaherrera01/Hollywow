@@ -5,12 +5,9 @@ export const MenuUsuario = () => {
     <header>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
-            <Link to={"/"} className="nav-link">
-              {" "}
-              Inicio{" "}
-            </Link>
-          </a>
+          <div className="navbar-brand" href="#">
+            <Link to={"/"} className="nav-link"> Inicio</Link>
+          </div>
           <button
             className="navbar-toggler"
             type="button"
@@ -25,34 +22,22 @@ export const MenuUsuario = () => {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link to={"/peliculas-usuario"} className="nav-link">
-                  {" "}
-                  Películas{" "}
-                </Link>
+                <Link to={"/peliculas-usuario"} className="nav-link"> Películas </Link>
               </li>
               <li className="nav-item">
                 <Link to={"/clientes-usuario"} className="nav-link"> Clientes </Link>
               </li>
-
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Productos
-                </a>
+              <li className="nav-item"> 
+                <Link to={"/productos-usuario"} className="nav-link"> Productos </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Proveedores
-                </a>
+                <Link to={"/proveedores-usuario"} className="nav-link"> Proveedores </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Empleados
-                </a>
-              </li>
+                <Link to={"/empleados-usuario"} className="nav-link" > Empleados </Link> 
+              </li>  
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Contraseñas
-                </a>
+                <Link to= {"/bovedas-usuario"} className="nav-link">  Contraseñas </Link>
               </li>
             </ul>
           </div>

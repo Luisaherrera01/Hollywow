@@ -6,9 +6,9 @@ export const MenuAdmin = () => {
     <header>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
+          <div className="navbar-brand" href="#">
             <Link to={"/"} className="nav-link">Inicio</Link>
-          </a>
+          </div>
           <button
             className="navbar-toggler"
             type="button"
@@ -30,26 +30,17 @@ export const MenuAdmin = () => {
               <li className="nav-item">
                 <Link to={"/listar-clientes"} className="nav-link"> Clientes </Link>
               </li>
-
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Productos
-                </a>
+                <Link to={"/listar-productos"} className="nav-link"> Productos </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Proveedores
-                </a>
+              <Link to={"/listar-proveedores"} className="nav-link"> Proveedores </Link>
+               </li>
+              <li className="nav-item">
+              <Link to={"/listar-empleados"} className="nav-link"> Empleados </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Empleados
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Contraseñas
-                </a>
+              <Link to={"/listar-bovedas"} className="nav-link"> Contraseñas </Link>             
               </li>
             </ul>
           </div>

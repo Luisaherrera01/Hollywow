@@ -1,8 +1,9 @@
-import { collection, updateDoc,doc,getDoc } from "firebase/firestore"
+import { updateDoc,doc,getDoc } from "firebase/firestore"
 import { dataBase } from "../../config/DataBase"
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { useParams } from "react-router-dom"
+import { MenuAdmin } from "../../MenuAdmin"
 
 const EditarProveedor = () => {
     const [nombre, setNombre] = useState("")
@@ -28,9 +29,10 @@ const EditarProveedor = () => {
             imgGerente,
             logoEmpresa            
         }
-        await updateDoc(proveedorColletion, proveedor)
-        returnListadoProveedores("/listarProveedor")
+        await updateDoc(proveedorColletion, proveedor,id)
+        returnListadoProveedores("/listar-proveedor")
     };
+
     const proveedorActualizado = async (id) => {
         const proveedor = await getDoc(doc(dataBase, "proveedores", id))
         setNombre(proveedor.data().nombre)
@@ -44,22 +46,22 @@ const EditarProveedor = () => {
     }
     useEffect(() =>{
         proveedorActualizado(id)
-    },[])
+    },[id])
 
     return ( 
         <section>
+            <MenuAdmin/>
             <form>
-            <input onChange={(e) => setNombre(e.target.value)} placeholder={"Nombre"} type={"text"} />
-                <input onChange={(e) => setDireccion(e.target.value)} placeholder={"Direccion"} type={"text"} />
-                <input onChange={(e) => setCiudad(e.target.value)} placeholder={"Ciudad"} type={"text"} />
-                <input onChange={(e) => setNit(e.target.value)} placeholder={"Nit"} type={"text"} />
-                <input onChange={(e) => setTelefono(e.target.value)} placeholder={"Telefono"} type={"text"} />
-                <input onChange={(e) => setNombreGerente(e.target.value)} placeholder={"Nombre de Gerente"} type={"text"} />
+                <input value={nombre} onChange={(e) => setNombre(e.target.value)} placeholder={"Nombre"} type={"text"} />
+                <input value={direccion} onChange={(e) => setDireccion(e.target.value)} placeholder={"Direccion"} type={"text"} />
+                <input value={ciudad} onChange={(e) => setCiudad(e.target.value)} placeholder={"Ciudad"} type={"text"} />
+                <input value={nit} onChange={(e) => setNit(e.target.value)} placeholder={"Nit"} type={"text"} />
+                <input value={telefono} onChange={(e) => setTelefono(e.target.value)} placeholder={"Telefono"} type={"text"} />
+                <input value={nombreGerente} onChange={(e) => setNombreGerente(e.target.value)} placeholder={"Nombre de Gerente"} type={"text"} />
+                <input value={imgGerente} onChange={(e) => setImgGerente(e.target.files[0])} placeholder={"Imagen"} type={"file"} />
+                <input value={logoEmpresa} onChange={(e) => setLogoEmpresa(e.target.files[0])} placeholder={"Logo"} type={"file"} />
 
-                <input onChange={(e) => setImgGerente(e.target.files[0])} placeholder={"Imagen"} type={"file"} />
-                <input onChange={(e) => setLogoEmpresa(e.target.files[0])} placeholder={"Logo"} type={"file"} />
-
-                <input onClick={editarProveedor()} type={"button"} value={"Editar proveedor"}/>
+                <input onClick={editarProveedor} type={"button"} value={"Editar proveedor"}/>
             </form>
         </section>
     )
