@@ -13,7 +13,7 @@ const EditarEmpleado = () => {
   const [salario, setSalario] = useState("");
   const [direccion, setDireccion] = useState("");
   const [numeroCuentaBancaria, setNumeroCuentaBancaria] = useState("");
-  const [imagen, setImagen] = useState(null);
+
   const returnListadoEmpleados = useNavigate();
   const { id } = useParams();
 
@@ -26,8 +26,8 @@ const EditarEmpleado = () => {
       cargo,
       salario,
       direccion,
-      numeroCuentaBancaria,
-      imagen,
+      numeroCuentaBancaria
+      
     };
     await updateDoc(empleadoColletion, empleado, id);
     returnListadoEmpleados("/listar-empleados");
@@ -129,12 +129,7 @@ const EditarEmpleado = () => {
                 value={numeroCuentaBancaria}
               />
             </div>
-            <label>Foto </label>
-            <br />
-            <input
-              onChange={(e) => setImagen(e.target.files[0])}
-              type={"file"}
-            />
+          
 
             <input
               className="button"

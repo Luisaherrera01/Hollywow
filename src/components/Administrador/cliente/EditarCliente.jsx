@@ -13,7 +13,7 @@ const EditarCliente = () => {
   const [direccion, setDireccion] = useState("");
   const [barrio, setBarrio] = useState("");
   const [ciudad, setCiudad] = useState("");
-  const [img, setImg] = useState("");
+  
   const returnListadoClientes = useNavigate();
   const { id } = useParams();
 
@@ -26,13 +26,15 @@ const EditarCliente = () => {
       telefono,
       direccion,
       barrio,
-      ciudad,
-      img,
-    };
-
-    await updateDoc(clienteColletion, cliente, id);
-    returnListadoClientes("/listar-clientes");
-  };
+      ciudad
+      
+    }
+console.log(clienteColletion)
+console.log(cliente)
+console.log(id)
+    await updateDoc(clienteColletion, cliente, id)
+    returnListadoClientes("/listar-clientes")
+  }
 
   const clienteActualizado = async (id) => {
     const clienteEditado = await getDoc(doc(dataBase, "clientes", id));
@@ -129,9 +131,7 @@ const EditarCliente = () => {
               />
             </div>
 
-            <label>Foto </label>
-            <br />
-            <input onChange={(e) => setImg(e.target.files[0])} type="file" />
+           
 
             <input
               className="button"

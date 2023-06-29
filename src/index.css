@@ -265,10 +265,21 @@ td img {
   background-color: #3aa6b9;
 }
 
-td a.btn {
+
+.boton a {
   border: 1px solid black;
+  margin-bottom:  20px;
+  margin-left: 20px;
+  width: 80px;
+
 }
 td button.btn {
   border: 1px solid black;
   margin-left: 20px;
+  width: 80px;
+}
+
+.boton{
+  display: flex;
+  flex-direction: column;
 }

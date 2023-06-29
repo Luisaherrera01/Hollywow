@@ -21,14 +21,7 @@ const ListarClientes = () => {
     mostrarClientes();
   };
 
-  {
-    /*const editarCliente = async (id) => {
-    const editarCliente = doc(dataBase, "clientes", id);
-    await updateDoc(editarCliente);
-  mostrarClientes();
-  };*/
-  }
-
+  
   const admin = true;
 
   useEffect(() => {
@@ -81,7 +74,7 @@ const ListarClientes = () => {
             <div>
               {admin && (
                 <div className="card-acciones">
-                  <Link className="btn" to={"/editar-cliente/" + cliente.id}>
+                  <Link className="btn" to={"/editar-cliente/"+cliente.id}>
                     Editar
                   </Link>
                   <button
