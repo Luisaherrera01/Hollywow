@@ -16,8 +16,8 @@ const CrearProveedor = () => {
     const returnListadoProveedores = useNavigate()
 
     const agregarProveedor = async () => {
-        const urlImage = await subirImagen(imgGerente, logoEmpresa)
-        const urlImgGerente = await subirImagen(imgGerente)
+        const urlImage= await subirImagen(imgGerente)
+        const urlLogo= await subirImagen(logoEmpresa)
         const proveedorColletion = collection(dataBase, "proveedores")
         const proveedor = {
             nombre,
@@ -27,9 +27,9 @@ const CrearProveedor = () => {
             telefono,
             nombreGerente,
             urlImage,
-            urlImgGerente,
-            logoEmpresa
-        }
+            urlLogo
+           
+        }      
         await addDoc(proveedorColletion, proveedor)
         returnListadoProveedores("/listar-proveedores")
     }

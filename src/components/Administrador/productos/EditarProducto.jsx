@@ -24,7 +24,7 @@ const EditarProducto = () => {
             valor,
             descripcion,
             categoria,
-            img
+            img 
         }        
         await updateDoc(productoColletion, producto,id)
 

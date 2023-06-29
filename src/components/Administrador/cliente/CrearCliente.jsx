@@ -43,7 +43,7 @@ const CrearCliente = () => {
         <div className="form">
           <form className="container">
             <div className="mb-3">
-              <label htmlFor="nombre">Nombre </label>
+              <label htmlFor="nombre">Nombre</label>
               <input
                 onChange={(e) => setNombre(e.target.value)}
                 type={"text"}

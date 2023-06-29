@@ -18,6 +18,7 @@ const EditarCliente = () => {
     const {id}= useParams()
     
     const editarCliente = async () => {
+        
         const clienteColletion = doc(dataBase, "clientes", id)
         const cliente = {
             nombre, 
