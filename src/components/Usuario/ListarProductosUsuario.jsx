@@ -41,8 +41,8 @@ const ListarProductosUsuario = () => {
                             <td>{producto.valor}</td>
                        
                             <td>
-                                <img src={producto.imagen} alt={producto.nombre} />
-                                {producto.imagen}
+                                <img src={producto.urlImage} alt={producto.nombre} />
+                               
                             </td>
                             
                         </tr>

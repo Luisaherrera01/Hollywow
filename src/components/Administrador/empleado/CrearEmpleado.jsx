@@ -43,24 +43,28 @@ const CrearEmpleado = () => {
                         <input onChange={(e) => setNombre(e.target.value)} id="nombre" type={"text"} className="form-control" />
                         </div>
                         <div className="mb-3">
-                        <label htmlFor="nombre">Nombre </label>
-                        <input onChange={(e) => setDocumento(e.target.value)} id="nombre" type={"text"} className="form-control" />
+                        <label htmlFor="documento">Documento </label>
+                        <input onChange={(e) => setDocumento(e.target.value)} id="documento" type={"text"} className="form-control" />
                         </div>
                         <div className="mb-3">
-                        <label htmlFor="nombre">Nombre </label>
-                        <input onChange={(e) => setCorreo(e.target.value)} id="nombre" type={"email"} className="form-control" />
+                        <label htmlFor="correo">Correo </label>
+                        <input onChange={(e) => setCorreo(e.target.value)} id="correo" type={"email"} className="form-control" />
                         </div>
                         <div className="mb-3">
-                        <label htmlFor="nombre">Nombre </label>
-                        <input onChange={(e) => setCargo(e.target.value)} id="nombre" type={"text"} className="form-control" />
+                        <label htmlFor="cargo">Cargo </label>
+                        <input onChange={(e) => setCargo(e.target.value)} id="cargo" type={"text"} className="form-control" />
                         </div>
                         <div className="mb-3">
-                        <label htmlFor="nombre">Nombre </label>
-                        <input onChange={(e) => setDireccion(e.target.value)} id="nombre" type={"text"} className="form-control" />
+                        <label htmlFor="salario">Salario </label>
+                        <input onChange={(e) => setSalario(e.target.value)} id="salario" type={"text"} className="form-control" />
                         </div>
                         <div className="mb-3">
-                        <label htmlFor="nombre">Nombre </label>
-                        <input onChange={(e) => setNumeroCuentaBancaria(e.target.value)} id="nombre" type={"text"} className="form-control" />
+                        <label htmlFor="direccion">Direccion </label>
+                        <input onChange={(e) => setDireccion(e.target.value)} id="direccion" type={"text"} className="form-control" />
+                        </div>
+                        <div className="mb-3">
+                        <label htmlFor="numeroCuentaBancaria">Numero cuenta bancaria </label>
+                        <input onChange={(e) => setNumeroCuentaBancaria(e.target.value)} id="numeroCuentaBancaria" type={"text"} className="form-control" />
                         </div>
                         <label>Foto </label><br />
                         <input onChange={(e) => setImagen(e.target.files[0])} type={"file"} />

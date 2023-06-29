@@ -46,16 +46,67 @@ const EditarProducto = () => {
 
     return (
         <section>
-            <MenuAdmin/>
-            <form>
-                <input value={nombre} onChange={(e) => setNombre(e.target.value)} placeholder={"Nombre"} type={"text"} />                
-                <input value={descripcion} onChange={(e) => setDescripcion(e.target.value)} placeholder={"Descripcion"} type={"text"} />
-                <input value={categoria} onChange={(e) => setCategoria(e.target.value)} placeholder={"Categoria"} type={"text"} />
-                <input value={cantidad} onChange={(e) => setCantidad(e.target.value)} placeholder={"Cantidad"} type={"text"} />
-                <input value={valor} onChange={(e) => setValor(e.target.value)} placeholder={"Valor"} type={"text"} />
-                <input value={img} onChange={(e) => setImagen(e.target.value)} type={"file"}/>
-                <input onClick={editarProducto} type={"button"} value={"Editar producto"}/>
+      <div>
+        <MenuAdmin />
+      </div>
+      <h1 className="title">Productos</h1>
+      <div className="form-container">
+        <div className="form">
+          <form className="container">
+            <div className="mb-3">
+              <label htmlFor="nombre">Nombre </label>
+              <input
+                onChange={(e) => setNombre(e.target.value)}
+                className="form-control"
+                type={"text"}
+                id="nombre"
+                value={nombre}
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="cantidad">Cantidad </label>
+              <input
+                onChange={(e) => setCantidad(e.target.value)}
+                className="form-control"
+                type={"text"}
+                id="cantidad"
+                value={cantidad}
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="valor">Valor </label>
+              <input
+                onChange={(e) => setValor(e.target.value)}
+                className="form-control"
+                type={"text"}
+                id="valor"
+                value={valor}
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="descripcion">Descripción </label>
+              <input
+                onChange={(e) => setDescripcion(e.target.value)}
+                className="form-control"
+                type={"text"}
+                id="descripcion"
+                value={descripcion}
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="categoria">Categoria </label>
+              <input
+                onChange={(e) => setCategoria(e.target.value)}
+                className="form-control"
+                type={"text"}
+                id="categoria"
+                value={categoria}
+              />
+            </div>
+                <input className="button" onClick={editarProducto} type={"button"} value={"Editar producto"}/>
             </form>
+            </div>
+            </div>
         </section>
     )
 }

@@ -90,7 +90,6 @@ body {
   color: black;
   font-weight: 800;
   cursor: pointer;
-
 }
 
 .loginAdmin {
@@ -225,7 +224,7 @@ a {
 .card-contenedor {
   display: flex;
   flex-direction: row;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   padding: 20px;
   justify-content: center;
 }
@@ -253,4 +252,23 @@ a {
 
 td img {
   width: 50px;
+}
+
+.btn a {
+  background-color: #3aa6b9;
+}
+.btn a:hover {
+  background-color: #c1ece4;
+}
+
+.menu {
+  background-color: #3aa6b9;
+}
+
+td a.btn {
+  border: 1px solid black;
+}
+td button.btn {
+  border: 1px solid black;
+  margin-left: 20px;
 }
