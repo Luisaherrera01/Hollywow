@@ -20,10 +20,10 @@ const ListarProveedoresUsuario = () => {
     
     return(
         <section>
-            <MenuUsuario />
+            <div><MenuUsuario /></div>
             <table className="table">
                 <thead>
-                    <tr>
+                    <tr className="lista">
                         <th scope="col">Nombre</th>
                         <th scope="col">Dirección</th>
                         <th scope="col">Ciudad</th>
@@ -51,7 +51,6 @@ const ListarProveedoresUsuario = () => {
                             <img src={proveedor.logoEmpresa} alt={proveedor.nombre} />
                                 {proveedor.imagen}
                             </td>
-                            //Aqui se piden dos imagenes.  Abria que verificar bien.
                         </tr>
                     ))}
                 </tbody>
