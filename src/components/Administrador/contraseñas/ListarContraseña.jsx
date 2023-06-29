@@ -42,7 +42,7 @@ const ListarBovedasDeContraseña = () => {
             </section>
             {admin &&(
               <section>
-                  <Link className="btn" to={"/editarBoveda/"+boveda.id}>Editar</Link>
+                  <Link className="btn" to={"/editar-boveda/"+boveda.id}>Editar</Link>
                   <button className="btn" onClick={()=> eliminarBovedaDeContraseña(boveda.id)}>Eliminar</button>
               </section>
             )}        

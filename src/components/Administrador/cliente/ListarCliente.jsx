@@ -7,11 +7,11 @@ import { MenuAdmin } from "../../MenuAdmin";
 const ListarClientes = () => {
   const [clientes, setClientes] = useState([]);
 
-   const mostrarClientes = async() => {
+  const mostrarClientes = async () => {
     const clientesCollection = collection(dataBase, "clientes");
     const data = await getDocs(clientesCollection);
 
-    setClientes(data.docs.map((doc)=>({ ...doc.data(),id:doc.id})));
+    setClientes(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
   };
 
   const eliminarCliente = async (id) => {
@@ -38,51 +38,64 @@ const ListarClientes = () => {
 
   return (
     <section>
-      <MenuAdmin />
-
-      <Link to={"/crear-cliente"}>Crear cliente</Link>
-
-      {clientes.map((cliente) => (
-        <article className="card-contenedor" key={cliente.id}>
-          <div>
-            <img src={cliente.urlImage} alt={cliente.nombre} />
-            <h3 className="card-titulo">{cliente.nombre}</h3>
-            <ul className="card-contenedor">
-              <li>
-                <strong>Documento:</strong> {cliente.documento}
-              </li>
-              <li>
-                <strong>Correo:</strong> {cliente.correo}
-              </li>
-              <li>
-                <strong>Teléfono:</strong> {cliente.telefono}
-              </li>
-              <li>
-                <strong>Dirección:</strong> {cliente.direccion}
-              </li>
-              <li>
-                <strong>Barrio:</strong> {cliente.barrio}
-              </li>
-              <li>
-                <strong>Ciudad:</strong> {cliente.ciudad}
-              </li>
-            </ul>
-          </div>
-          {admin && (
-            <div className="card-acciones">
-              <Link className="btn" to={"/editar-cliente/" + cliente.id}>
-                Editar
-              </Link>
-              <button
-                className="btn"
-                onClick={() => eliminarCliente(cliente.id)}
-              >
-                Eliminar
-              </button>
+      <div>
+        <MenuAdmin />
+      </div>
+      <div className="button">
+        <Link to={"/crear-cliente"}>Crear cliente</Link>
+      </div>
+      <div className="card-contenedor">
+        {clientes.map((cliente) => (
+          <div className="card estilo-card" key={cliente.id}>
+            <div>
+              <img
+                className="card-img-top"
+                src={cliente.urlImage}
+                alt={cliente.nombre}
+              />
+              <div className="card-body">
+                <h3 className="card-title">{cliente.nombre}</h3>
+              </div>
+              <ul className="list-group list-group-flush">
+                <li className="list-group-item">
+                  <strong>Documento:</strong> {cliente.documento}
+                </li>
+                <li className="list-group-item">
+                  <strong>Correo:</strong> {cliente.correo}
+                </li>
+                <li className="list-group-item">
+                  <strong>Teléfono:</strong> {cliente.telefono}
+                </li>
+                <li className="list-group-item">
+                  <strong>Dirección:</strong> {cliente.direccion}
+                </li>
+                <li className="list-group-item">
+                  <strong>Barrio:</strong> {cliente.barrio}
+                </li>
+                <li className="list-group-item">
+                  <strong>Ciudad:</strong> {cliente.ciudad}
+                </li>
+              </ul>
             </div>
-          )}
-        </article>
-      ))}
+
+            <div>
+              {admin && (
+                <div className="card-acciones">
+                  <Link className="btn" to={"/editar-cliente/" + cliente.id}>
+                    Editar
+                  </Link>
+                  <button
+                    className="btn"
+                    onClick={() => eliminarCliente(cliente.id)}
+                  >
+                    Eliminar
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
     </section>
   );
 };

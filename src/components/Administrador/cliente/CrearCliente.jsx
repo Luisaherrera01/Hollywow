@@ -35,78 +35,163 @@ const CrearCliente = () => {
   };
   return (
     <section>
-      <MenuAdmin />
-      <form>
+      <div>
+        <MenuAdmin />
+      </div>
+      <h1 className="title">Clientes</h1>
+      <div className="form-container">
+        <div className="form">
+          <form className="container">
+            <div className="mb-3">
+              <input
+                onChange={(e) => setNombre(e.target.value)}
+                placeholder={"Nombre"}
+                type={"text"}
+                className="form-control"
+              />
+            </div>
+            <div className="mb-3">
+              <input
+                onChange={(e) => setDocumento(e.target.value)}
+                placeholder={"Documento"}
+                type={"text"}
+                className="form-control"
+              />
+            </div>
+            <div className="mb-3">
+              <input
+                onChange={(e) => setCorreo(e.target.value)}
+                placeholder={"Correo"}
+                type={"text"}
+                className="form-control"
+              />
+            </div>
+            <div className="mb-3">
+              <input
+                onChange={(e) => setTelefono(e.target.value)}
+                placeholder={"Telefono"}
+                type={"text"}
+                className="form-control"
+              />
+            </div>
+            <div className="mb-3">
+              <input
+                onChange={(e) => setDireccion(e.target.value)}
+                placeholder={"Dirección"}
+                type={"text"}
+                className="form-control"
+              />
+            </div>
+            <div className="mb-3">
+              <input
+                onChange={(e) => setBarrio(e.target.value)}
+                placeholder={"Barrio"}
+                type={"text"}
+                className="form-control"
+              />
+            </div>
+            <div className="mb-3">
+              <input
+                onChange={(e) => setCiudad(e.target.value)}
+                placeholder={"Ciudad"}
+                type={"text"}
+                className="form-control"
+              />
+            </div>
+            <input onChange={(e) => setImg(e.target.files[0])} type="file" />
+
+            <input
+              className="button"
+              onClick={agregarCliente}
+              type={"button"}
+              value={"agregar cliente"}
+            />
+          </form>
+        </div>
+      </div>
+
+      {/*<form className="container">
+        <div className="mb-3">
+          <label className="form-label">
+            Nombre
+          </label>
+          <input
+            onChange={(e) => setNombre(e.target.value)}
+            type={"text"}
+            className="form-control"
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="documento" className="form-label">
+            Documento
+          </label>
+          <input
+            onChange={(e) => setDocumento(e.target.value)}
+            type={"text"}
+            className="form-control"
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="correo" className="form-label">
+            Correo
+          </label>
+          <input
+            onChange={(e) => setCorreo(e.target.value)}
+            type={"text"}
+            className="form-control"
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="telefono" className="form-label">
+            Telefono
+          </label>
+          <input
+            onChange={(e) => setTelefono(e.target.value)}
+            type={"text"}
+            className="form-control"
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="direccion" className="form-label">
+            Direccion
+          </label>
+          <input
+            onChange={(e) => setDireccion(e.target.value)}
+            type={"text"}
+            className="form-control"
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="barrio" className="form-label">
+            Barrio
+          </label>
+          <input
+            onChange={(e) => setBarrio(e.target.value)}
+            type={"text"}
+            className="form-control"
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="ciudad" className="form-label">
+            Ciudad
+          </label>
+          <input
+            onChange={(e) => setCiudad(e.target.value)}
+            type={"text"}
+            className="form-control"
+          />
+        </div>
+        <label>Nombre</label>
         <input
           onChange={(e) => setNombre(e.target.value)}
-          placeholder={"Nombre"}
+          placeholder={""}
           type={"text"}
         />
-        <input
-          onChange={(e) => setDocumento(e.target.value)}
-          placeholder={"Documento"}
-          type={"text"}
-        />
-        <input
-          onChange={(e) => setCorreo(e.target.value)}
-          placeholder={"Correo"}
-          type={"text"}
-        />
-        <input
-          onChange={(e) => setTelefono(e.target.value)}
-          placeholder={"Telefono"}
-          type={"text"}
-        />
-        <input
-          onChange={(e) => setDireccion(e.target.value)}
-          placeholder={"Dirección"}
-          type={"text"}
-        />
-        <input
-          onChange={(e) => setBarrio(e.target.value)}
-          placeholder={"Barrio"}
-          type={"text"}
-        />
-        <input
-          onChange={(e) => setCiudad(e.target.value)}
-          placeholder={"Ciudad"}
-          type={"text"}
-        />
-        <input onChange={(e) => setImg(e.target.files[0])} type="file" />
-
-        <input
-          onClick={agregarCliente}
-          type={"button"}
-          value={"agregar cliente"}
-        />
-      </form>
-
-      <form className="container">
-        <div className="mb-3">
-          <label htmlFor="exampleInputEmail1" className="form-label">
-            Email address
-          </label>
-          <input
-            type="email"
-            className="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="exampleInputPassword1" className="form-label">
-            Password
-          </label>
-          <input
-            type="password"
-            className="form-control"
-            id="exampleInputPassword1"
-          />
-        </div>
+  
         <button type="submit" className="btn btn-primary">
-          Submit
+          Agregar cliente
         </button>
-      </form>
+      </form>*/}
     </section>
   );
 };

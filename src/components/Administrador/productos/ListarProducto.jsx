@@ -34,13 +34,16 @@ const ListarProductos = () => {
 
   return (
     <section>
+      <div>
       <MenuAdmin />
-
+      </div>
+      <div className="button">
       <Link to={"/crear-producto"}>Crear producto</Link>
-
+      </div>
+      <section>
       <table className="table">
         <thead>
-          <tr>
+          <tr className="lista">
             <th scope="col">Nombre</th>
             <th scope="col">Cantidad</th>
             <th scope="col">Valor</th>
@@ -79,6 +82,7 @@ const ListarProductos = () => {
           ))}
         </tbody>
       </table>
+      </section>
     </section>
   );
 };

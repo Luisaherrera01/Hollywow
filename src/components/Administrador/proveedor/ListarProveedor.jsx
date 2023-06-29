@@ -30,13 +30,16 @@ const ListarProveedores = () => {
   
   return (
     <section>
+      <div>
       <MenuAdmin/>
-
+      </div>
+      <div className="button">
       <Link to={'/crear-proveedor'}>Crear Proveedor</Link>
-
+      </div>
+      <section>
       <table className="table">
         <thead>
-          <tr>
+          <tr className="lista">
             <th scope="col">Nombre</th>
             <th scope="col">Dirección</th>
             <th scope="col">Ciudad</th>
@@ -73,6 +76,7 @@ const ListarProveedores = () => {
                ))}
              </tbody>
            </table>
+           </section>
          </section>
        );
      };

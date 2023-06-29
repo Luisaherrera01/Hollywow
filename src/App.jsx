@@ -72,7 +72,7 @@ const router = createBrowserRouter([
   },
 
   {
-    path:"/editarBoveda/:id",
+    path:"/editar-boveda/:id",
     element: <EditarContraseña/>
   },
 

@@ -36,15 +36,15 @@ function FormAdministrador() {
     <section className="login">
       <form className="login-form" onSubmit={validateForm}>
         <h1 className="login-title"> Administrador</h1>
-        <div>
-          <label className="administrador">Administrador:</label>
-          <input
+        <div className="loginAdmin">
+          <label className="administrador">Administrador</label>
+          <input 
             type="text"
             value={nombreAdministrador}
             onChange={handleNameInputChange}
           />
-          <label className="password">contraseña:</label>
-          <input
+          <label className="password">contraseña</label>
+          <input 
             type="password"
             value={contrasenaAdministrador}
             onChange={handlePasswordInputChange}
