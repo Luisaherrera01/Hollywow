@@ -19,10 +19,10 @@ const ListarProductosUsuario = () => {
 
       return(
         <section>
-            <MenuUsuario />
+            <div><MenuUsuario /></div>
             <table className="table">
                 <thead>
-                    <tr>
+                    <tr className="lista">
                         <th scope="col">Nombre</th>
                         <th scope="col">Descripcion</th>
                         <th scope="col">Categoria</th>

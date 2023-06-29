@@ -29,7 +29,7 @@ body {
   border-radius: 6px;
   border: 1px solid black;
   position: absolute;
-  width: 300px;
+  width: 500px;
   top: 50%;
   left: 50%;
   margin-top: -200px;
@@ -79,7 +79,7 @@ body {
 .user,
 .button {
   background-color: #ff9eaa;
-  width: 200px;
+  width: 300px;
   margin: 10px;
   border: 1px solid black;
   padding: 10px;
@@ -90,6 +90,7 @@ body {
   color: black;
   font-weight: 800;
   cursor: pointer;
+
 }
 
 .loginAdmin {
@@ -243,7 +244,7 @@ a {
   border: 1px solid black;
   padding: 30px;
   width: 60%;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 
 .lista {
