@@ -12,7 +12,7 @@ const EditarProducto = () => {
     const [valor, setValor] = useState("")
     const [descripcion, setDescripcion] = useState("")
     const [categoria, setCategoria] = useState("")
-    const [imagen, setImagen] = useState(null)
+    const [img, setImagen] = useState(null)
     const returnListadoProductos = useNavigate()
     const {id}= useParams()
    
@@ -24,7 +24,7 @@ const EditarProducto = () => {
             valor,
             descripcion,
             categoria,
-            imagen
+            img 
         }        
         await updateDoc(productoColletion, producto,id)
 
@@ -53,7 +53,7 @@ const EditarProducto = () => {
                 <input value={categoria} onChange={(e) => setCategoria(e.target.value)} placeholder={"Categoria"} type={"text"} />
                 <input value={cantidad} onChange={(e) => setCantidad(e.target.value)} placeholder={"Cantidad"} type={"text"} />
                 <input value={valor} onChange={(e) => setValor(e.target.value)} placeholder={"Valor"} type={"text"} />
-                <input value={imagen} onChange={(e) => setImagen(e.target.value)} type={"file"}/>
+                <input value={img} onChange={(e) => setImagen(e.target.value)} type={"file"}/>
                 <input onClick={editarProducto} type={"button"} value={"Editar producto"}/>
             </form>
         </section>

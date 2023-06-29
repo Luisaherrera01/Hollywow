@@ -39,6 +39,7 @@ const CrearEmpleado = () => {
                 <input onChange={(e) => setDocumento(e.target.value)} placeholder={"Documento"} type={"text"} />
                 <input onChange={(e) => setCorreo(e.target.value)} placeholder={"Correo"} type={"email"} />
                 <input onChange={(e) => setCargo(e.target.value)} placeholder={"Cargo"} type={"text"} />
+                <input onChange={(e) => setSalario(e.target.value)} placeholder={"Salario"} type={"text"} />
                 <input onChange={(e) => setDireccion(e.target.value)} placeholder={"Dirección"} type={"text"} />
                 <input onChange={(e) => setNumeroCuentaBancaria(e.target.value)} placeholder={"Número Cuenta Bancaria"} type={"text"} />
                 <input onChange={(e) => setImagen(e.target.files[0])} type={"file"} />

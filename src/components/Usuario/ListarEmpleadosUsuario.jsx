@@ -21,23 +21,48 @@ const ListarEmpleadosUsuario = () => {
 
     return (
         <section>
-            <MenuUsuario />
-            {empleados.map((empleado)=>(
-                <section key={empleado.id}>
-                    <h1>{empleado.nombre}</h1>
-                    <h3>{empleado.documento}</h3>
-                    <h3>{empleado.correo}</h3>
-                    <h3>{empleado.cargo}</h3>
-                    <h3>{empleado.salario}</h3>
-                    <h3>{empleado.direccion}</h3>
-                    <h3>{empleado.numeroCuentaBancaria}</h3>
-                        <section>
-                            <img src= {empleado.imagen} alt={empleado.nombre}/>
-                            {empleado.imagen}
-                        </section>                                     
-                </section>
-             ))}
-        </section>      
+      <div>
+        <MenuUsuario />
+      </div>
+      <div className="card-contenedor">
+        {empleados.map((empleado) => (
+          <div className="card estilo-card" key={empleado.id}>
+            <img
+              className="card-img-top"
+              src={empleado.urlImage}
+              alt={empleado.nombre}
+            />
+            <div className="card-body">
+              <h3 className="card-title">{empleado.nombre}</h3>
+            </div>
+            <ul className="list-group list-group-flush">
+            <li className="list-group-item">
+                <strong>Nombre:</strong> {empleado.nombre}
+              </li>
+              <li className="list-group-item">
+                <strong>Documento:</strong> {empleado.documento}
+              </li>
+              <li className="list-group-item">
+                <strong>Correo:</strong> {empleado.correo}
+              </li>
+              <li className="list-group-item">
+                <strong>Cargo:</strong> {empleado.cargo}
+              </li>
+              <li className="list-group-item">
+                <strong>Salario:</strong> {empleado.salario}
+              </li>
+              <li className="list-group-item">
+                <strong>Direccion:</strong> {empleado.direccion}
+              </li>
+              <li className="list-group-item">
+                <strong>Cuenta Bancaria:</strong>{" "}
+                {empleado.numeroCuentaBancaria}
+              </li>
+            </ul>
+        </div>
+        ))}
+      </div>
+    </section>      
     )
 }
 

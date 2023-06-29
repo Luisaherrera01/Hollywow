@@ -1,45 +1,62 @@
-import {collection,getDocs} from "firebase/firestore"
-import { useEffect, useState } from "react"
-import { dataBase } from "../config/DataBase"
-import { MenuUsuario } from "../MenuUsuario"
+import { collection, getDocs } from "firebase/firestore";
+import { useEffect, useState } from "react";
+import { dataBase } from "../config/DataBase";
+import { MenuUsuario } from "../MenuUsuario";
 
 const ListarBovedasDeContraseñaUsuario = () => {
-    const [bovedas,setBovedas] = useState([]);
+  const [bovedas, setBovedas] = useState([]);
 
-    const mostrarBovedasDeContraseña = async () => {
-        const bovedasCollection = collection(dataBase, "bovedas");
-        const data = await getDocs(bovedasCollection);
+  const mostrarBovedasDeContraseña = async () => {
+    const bovedasCollection = collection(dataBase, "bovedas");
+    const data = await getDocs(bovedasCollection);
 
-        setBovedas(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    };
+    setBovedas(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+  };
 
-    useEffect(() => {
-        mostrarBovedasDeContraseña();
-    }, []);
+  useEffect(() => {
+    mostrarBovedasDeContraseña();
+  }, []);
 
-    console.log(bovedas);
+  console.log(bovedas);
 
-    return (
-        <section>
-            <MenuUsuario />
-            {bovedas.map((boveda)=>(
-                <section key={boveda.id}>
-                    <h1>{boveda.nombre}</h1>
-                    <h3>{boveda.usuario}</h3>
-                    <h3>{boveda.contraseña}</h3>
-                                
-                    <section>
-                        <img src= {boveda.imgWeb} alt={boveda.nombre} />
-                         {boveda.imagen}
-                        <img src= {boveda.urlImg} alt={boveda.nombre}/>
-                        {boveda.imagen}
-//Aqui se piden dos imagenes.  Abria que verificar bien.
-                    </section> 
+  return (
+    <section>
+      <div>
+        <MenuUsuario />
+      </div>
+      <div className="card-contenedor">
+        {bovedas.map((boveda) => (
+          <div className="card estilo-card" key={boveda.id}>
+            <div>
+              <img
+                className="card-img-top"
+                src={boveda.urlImage}
+                alt={boveda.nombre}
+              />
 
-                </section>
-            ))}
-        </section>   
-    )
-}
+              <div className="card-body">
+                <h3 className="card-title">{boveda.nombre}</h3>
+              </div>
+              <ul className="list-group list-group-flush">
+                <li className="list-group-item">
+                  <strong>Nombre:</strong> {boveda.nombre}
+                </li>
+                <li className="list-group-item">
+                  <strong>Contraseña:</strong> {boveda.contraseña}
+                </li>
+                <li className="list-group-item">
+                  <strong>Usuario:</strong> {boveda.usuario}
+                </li>
+                <li className="list-group-item">
+                  <strong>Url:</strong> {boveda.urlImage}
+                </li>
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
 
-export default ListarBovedasDeContraseñaUsuario
+export default ListarBovedasDeContraseñaUsuario;

@@ -51,7 +51,6 @@ const ListarProveedoresUsuario = () => {
                             <img src={proveedor.logoEmpresa} alt={proveedor.nombre} />
                                 {proveedor.imagen}
                             </td>
-                            //Aqui se piden dos imagenes.  Abria que verificar bien.
                         </tr>
                     ))}
                 </tbody>

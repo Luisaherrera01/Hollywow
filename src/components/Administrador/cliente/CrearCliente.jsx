@@ -43,11 +43,13 @@ const CrearCliente = () => {
         <div className="form">
           <form className="container">
             <div className="mb-3">
+              <label htmlFor="nombre">Nombre</label>
               <input
                 onChange={(e) => setNombre(e.target.value)}
-                placeholder={"Nombre"}
+                /* placeholder={"Nombre"} */
                 type={"text"}
                 className="form-control"
+                id="nombre"
               />
             </div>
             <div className="mb-3">

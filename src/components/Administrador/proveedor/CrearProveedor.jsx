@@ -16,8 +16,8 @@ const CrearProveedor = () => {
     const returnListadoProveedores = useNavigate()
     
     const agregarProveedor = async () => {
-        const urlImage= await subirImagen(imgGerente, logoEmpresa)
-        const urlImgGerente= await subirImagen(imgGerente)
+        const urlImage= await subirImagen(imgGerente)
+        const urlLogo= await subirImagen(logoEmpresa)
         const proveedorColletion = collection(dataBase, "proveedores")
         const proveedor = {
             nombre, 
@@ -27,8 +27,8 @@ const CrearProveedor = () => {
             telefono,
             nombreGerente,
             urlImage,
-            urlImgGerente,
-            logoEmpresa
+            urlLogo
+           
         }      
         await addDoc(proveedorColletion, proveedor)
         returnListadoProveedores("/listar-proveedores")
@@ -46,7 +46,7 @@ const CrearProveedor = () => {
                 <input onChange={(e) => setImgGerente(e.target.files[0])} type="file" />
                 <input onChange={(e) => setLogoEmpresa(e.target.files[0])} type="file"/>
 
-                <input onClick={agregarProveedor} type={"button"} value={"agregar proveedor"}/>
+                <input onClick={agregarProveedor} type={"button"} value={"Agregar proveedor"}/>
             </form>
         </section>
     )

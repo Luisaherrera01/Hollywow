@@ -60,9 +60,10 @@ const ListarProveedores = () => {
               <td>{proveedor.nit}</td>
               <td>{proveedor.telefono}</td>
               <td>{proveedor.nombreGerente}</td>
-              <td>{proveedor.logoEmpresa}</td>
               <td>
-                <img src={proveedor.urlImage} alt={proveedor.nombre} />
+                <img src={proveedor.urlImage} alt={proveedor.nombre} /></td>
+              <td>
+                <img src={proveedor.urlLogo} alt={proveedor.nombre} />
               </td>
               {admin && (
                 <td>

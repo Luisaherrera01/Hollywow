@@ -16,7 +16,6 @@ const CrearProducto = () => {
    
     const agregarProducto = async () => {
         const urlImage= await subirImagen(img)
-
         const productoColletion = collection(dataBase, "productos")
         const producto = {
             nombre, 
@@ -25,7 +24,6 @@ const CrearProducto = () => {
             urlImage,
             descripcion,
             categoria,
-            img,
         }
         
         await addDoc(productoColletion, producto)
