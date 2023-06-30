@@ -27,7 +27,6 @@ const EditarProducto = () => {
             img 
         }        
         await updateDoc(productoColletion, producto,id)
-
         returnListadoProductos("/listar-productos")
     };
 

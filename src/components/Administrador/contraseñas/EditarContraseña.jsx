@@ -9,7 +9,6 @@ const EditarBovedaContraseña = () => {
   const [nombre, setNombre] = useState("");
   const [contraseña, setContraseña] = useState("");
   const [usuario, setUsuario] = useState("");
-  const [imgWeb, setImgWeb] = useState("");
   const returnListadoBovedas = useNavigate();
   const { id } = useParams();
 
@@ -18,8 +17,8 @@ const EditarBovedaContraseña = () => {
     const boveda = {
       nombre,
       contraseña,
-      usuario,
-      imgWeb,
+      usuario
+      
     };
     await updateDoc(bovedaColletion, boveda, id);
     returnListadoBovedas("/listar-bovedas");
@@ -75,10 +74,6 @@ const EditarBovedaContraseña = () => {
                 value={usuario}
               />
             </div>
-            <label>Imagen </label>
-            <br />
-            <input onChange={(e) => setImgWeb(e.target.files[0])} type="file" />
-
             <input
             className="button"
               onClick={editarBovedaContraseña}

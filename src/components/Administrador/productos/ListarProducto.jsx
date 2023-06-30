@@ -66,8 +66,8 @@ const ListarProductos = () => {
                   <img src={producto.urlImage} alt={producto.nombre} />
                 </td>
                 {admin && (
-                  <td>
-                    <Link className="btn" to={"/editar-producto/" + producto.id}>
+                  <td className="boton">
+                    <Link className="btn" to={"/editar-producto/"+producto.id}>
                       Editar
                     </Link>
                     <button
